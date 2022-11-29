@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS231 Project 4: Agent-Based Simulations</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513827.html">Di Luo&#39;s CS231</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS231 Project 4: Agent-Based Simulations
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Mar 13, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong style="text-decoration: underline;">Description</strong></p><p>In the project I<span style="color: rgb(34,51,68);"> used my linked list, which was created in lab, within the context of an agent-based simulation. Linked List is a linear data structure that its elements are not stored at the contiguous location. Instead the elements are linked using pointers. The linked list contains nodes, which contain each agent we are doing the simulation on. </span>An agent-based simulation is a simulation that updates the current status based on each object’s condition. To do the simulation I created Agent class that creates an agent, SocialAgent class that extends Agent class and creates a group of agents, Landscape class that post the simulation, and SocialAgentSimulation class that do the simulation. Besides, I implements the updatedState() function in SocialAgent class and updateAgent() function in Landscape class to update each agents. After that I created CategorizedSocialAgent and its simulation to see how the simulation works with agents in different categories. The program ended up working as I expected, with the successful simulation according to the rules provided in the description of this project. </p><p><strong style="text-decoration: underline;"><br/></strong></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong>Solution</strong></strong></strong></p><p>Firstly I created a Agent class, which creates an agent that stores its position. Since the Agent class is going to be inherited by two more class I implemented <span style="color: rgb(34,51,68);">updateState() and draw() with nothing inside as abstract functions.</span></p><p> </p><p>Then I created SocialAgent class that extends Agent class. super() calls the constructor in Agent class and SocialAgent class has a draw method that draws a circle on Landscape representing the agent. If the agent moved during the last updateState it will has a lighter color, if not it will has a darker color. </p><p> </p><p>Then I created Landscape class that can present the agent-based simulation. In this class there is a getNeighbors() function that <span style="color: rgb(34,51,68);">returns a list of the Agents within radius distance of the location x0, y0. This means that the function will check the list containing all the agents and added the ones that are in the specified circle into a new ArrayList and return it. <span style="color: rgb(34,51,68);">Since the neighbor amount determines whether an agent moves or not, it’s really important to implement it correctly and also in an efficient way.</span></span></p><p> </p><p><span style="color: rgb(34,51,68);">Then I run the main function in LandscapeDisplay.java file, which display the landscape with 200 agents.</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264161.png" data-image-src="attachments/425132351/425264161.png" data-unresolved-comment-count="0" data-linked-resource-id="425264161" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 10.38.34 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span></p><p><span style="color: rgb(34,51,68);">After that I implements the updatedState() function in SocialAgent class and updateAgent() function in Landscape class to update each agents. If there are many neighbors around a agent then it is not likely to move, otherwise it continues moving randomly until the number of neighbors increases to a certain amount. I tested updateAgent() <span style="color: rgb(34,51,68);">by creating a Landscape with four agents on it at locations (5, 5), (10, 10), (15, 15), and (20, 20), and the test function correctly shows the number of neighbors.</span></span></p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><br/></span></span></p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);">Then I created SocialAgentSimulation class to run the simulation and the simulation works. The agents moves around and as time goes by many of them get together and stoped.</span></span></p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264162.png" data-image-src="attachments/425132351/425264162.png" data-unresolved-comment-count="0" data-linked-resource-id="425264162" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 10.38.56 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264182.gif" data-image-src="attachments/425132351/425264182.gif" data-unresolved-comment-count="0" data-linked-resource-id="425264182" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="ezgif.com-optimize.gif" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/gif" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span></span></span></p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);">After that I created CategorizedSocialAgent class and <span style="color: rgb(34,51,68);">CategorizedSocialAgentSimulation class. <span style="color: rgb(34,51,68);">CategorizedSocialAgent class extends SocialAgent class and it creates agents with different categories. Besides it overrides <span style="color: rgb(34,51,68);">updateState() so that it identifies how many neighbors within a radius of 20 have the same category and how many have a different category. If there are many agents with the same category then it tends to stop, otherwise it keeps moving. Then <span style="color: rgb(34,51,68);">CategorizedSocialAgentSimulation class simulates with agents in two different categories represented by different colors. I conducted three simulation with different radius, 20, 40 or 100, and simulated for 200 times. The results are presented below from left to right. As we can see, the increase of radius leads to less condensed still agents.</span></span></span></span></span></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264185.png" data-image-src="attachments/425132351/425264185.png" data-unresolved-comment-count="0" data-linked-resource-id="425264185" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 11.06.24 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264186.png" data-image-src="attachments/425132351/425264186.png" data-unresolved-comment-count="0" data-linked-resource-id="425264186" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 11.06.41 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264187.png" data-image-src="attachments/425132351/425264187.png" data-unresolved-comment-count="0" data-linked-resource-id="425264187" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 11.07.00 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264184.gif" data-image-src="attachments/425132351/425264184.gif" data-unresolved-comment-count="0" data-linked-resource-id="425264184" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="ezgif.com-optimize-2.gif" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/gif" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><br/></strong></strong></strong></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong>Extension</strong></strong></strong></strong></strong></p><p>For the first extension, I created DifferentSocialAgentSimulation.java so that user can decide which simulation to run from command line. The default mode is with uncategorized social agent. If the first command line argument is 0, the simulation will use uncategorized agents; if it is 1, the simulation will use categorized agents. Users can also control other parameters, like the size of window and number of agents, from command line arguments.</p><p> </p><p>For the second extension, I created AdditionalSocialAgent, which has three categories of agents and the rule changed a little bit. For AdditionalSocialAgent if the number of neighbors is smaller than 2, then the agent would move faster. I also added this agent into DifferentSocialAgentSimulation class so that its simulation can be down with command line first argument as 2.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264002.png" data-image-src="attachments/425132351/425264002.png" data-unresolved-comment-count="0" data-linked-resource-id="425264002" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 3.30.11 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span></p><p>The simulation looks like:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264183.png" data-image-src="attachments/425132351/425264183.png" data-unresolved-comment-count="0" data-linked-resource-id="425264183" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 11.00.39 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span></p><p> </p><p>For the third extension, I did experiments on AdditionalSocialAgent by changing the threshold value of the number of neighbors from 2 to 3 to 4.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264003.png" data-image-src="attachments/425132351/425264003.png" data-unresolved-comment-count="0" data-linked-resource-id="425264003" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 3.27.44 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span></p><p>After 100 times of moving in each case, the results are shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264193.png" data-image-src="attachments/425132351/425264193.png" data-unresolved-comment-count="0" data-linked-resource-id="425264193" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 11.12.19 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264198.png" data-image-src="attachments/425132351/425264198.png" data-unresolved-comment-count="0" data-linked-resource-id="425264198" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 11.18.31 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/425132351/425264199.png" data-image-src="attachments/425132351/425264199.png" data-unresolved-comment-count="0" data-linked-resource-id="425264199" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-13 at 11.18.47 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="425132351" data-linked-resource-container-version="10"></span></p><p> </p><p>As we can see, as the threshold value increases, there is less chance for the agents to stop.</p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong><br/></strong></strong></strong></strong></strong></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;">Reflection</strong></strong></strong></strong></strong></strong></p><p>In this project I learned how to create a linked list and how to use it to conduct experiments in agent-based simulation. I also learned how to implement and improve my own data structure, which makes it easier to read and understand. After running the simulation I am clearer with the concept of the <span style="color: rgb(34,51,68);">Agent-based simulations <span style="color: rgb(34,51,68);">inspired by </span><em>Growing Artificial Societies</em><span style="color: rgb(34,51,68);"> by Epstein and Axtell.</span></span></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><br/></strong></strong></strong></strong></strong></strong></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong style="text-decoration: underline;">Source</strong></strong></strong></strong></strong></strong></strong></p><p>Thanks to Yixuan Qiu and Roujia Zhang for helping me.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425263384.png">Screen Shot 2019-03-11 at 10.08.26 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425263387.png">Screen Shot 2019-03-11 at 10.12.13 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425263403.png">Screen Shot 2019-03-11 at 10.33.16 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425263427.png">Screen Shot 2019-03-11 at 10.40.44 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425263428.png">Screen Shot 2019-03-11 at 10.41.38 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425263429.png">Screen Shot 2019-03-11 at 10.43.36 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425263436.gif">ezgif-4-103e5de15add.gif</a> (image/gif)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425263438.gif">ezgif-4-8dd2f6b7b609.gif</a> (image/gif)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264002.png">Screen Shot 2019-03-13 at 3.30.11 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264003.png">Screen Shot 2019-03-13 at 3.27.44 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264004.png">Screen Shot 2019-03-13 at 3.25.36 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264005.png">Screen Shot 2019-03-13 at 3.25.56 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264006.png">Screen Shot 2019-03-13 at 3.26.29 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264007.png">Screen Shot 2019-03-13 at 3.19.12 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264161.png">Screen Shot 2019-03-13 at 10.38.34 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264162.png">Screen Shot 2019-03-13 at 10.38.56 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264177.png">Screen Shot 2019-03-13 at 10.43.54 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264182.gif">ezgif.com-optimize.gif</a> (image/gif)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264183.png">Screen Shot 2019-03-13 at 11.00.39 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264184.gif">ezgif.com-optimize-2.gif</a> (image/gif)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264185.png">Screen Shot 2019-03-13 at 11.06.24 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264186.png">Screen Shot 2019-03-13 at 11.06.41 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264187.png">Screen Shot 2019-03-13 at 11.07.00 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264193.png">Screen Shot 2019-03-13 at 11.12.19 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264194.png">Screen Shot 2019-03-13 at 11.13.25 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264195.png">Screen Shot 2019-03-13 at 11.13.40 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264198.png">Screen Shot 2019-03-13 at 11.18.31 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/425132351/425264199.png">Screen Shot 2019-03-13 at 11.18.47 PM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

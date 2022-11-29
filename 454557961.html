@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS232 Project 6</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513832.html">Di Luo&#39;s CS232</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS232 Project 6
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Oct 28, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Summary</strong></u></p><p>The purpose of the project was to implement a stack-based four-function calculator by making use of RAM, which is short for random access memory. In the lab, a stack was constructed with a RAM and a stack pointer. In the project, a stack-based calculator was implemented, which can operate the four basic functions in math (+, -, *, /) with the values stored in the stack.</p><p> </p><p><u><strong>Main Task</strong></u></p><p>In the lab, the stack was implemented and the GHDL testing result below, which is identical to the result offered in lab instruction, shows that the stack works correctly. The values 1, 2, 3 were put on the stack one by one and popped out in the correct sequence of 3, 2, 1, which proves the validity of the stack. The program was stored in stacker.vhd.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/454557961/454525160.png" data-image-src="attachments/454557961/454525160.png" data-unresolved-comment-count="0" data-linked-resource-id="454525160" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="task1test.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="454557961" data-linked-resource-container-version="8"></span></p><p> </p><p>In the project, the stack-based calculator was implemented. The calculator has the following components: a RAM represented by the stack that stores all the operands; a memory buffer register (MBR) that works as the top of the stack and the display of the calculator, showing the currently active number; a stack pointer showing the next empty space in the stack. In detail, the RAM was created in memram.vhd, which has 16 words of 8 bits each, meaning that it has 4 address bits and 8 data bits.</p><p> </p><p>The top-level VHDL file was created as calculator.vhd. In order to control the calculator, there are three buttons to execute actions, two switches to select the math operation, and eight switches to specify the input values. Button 2 (b2) is the Capture button and writes the current value from the switches to MBR. Button 3 (b3) is the Enter button and pushes the value in MBR onto the stack. Button 4 (b4) is the Action button and execute the operation indicated by the two operation switches, using the first value on the stack and MBR value and putting the result back to MBR. The RAM and Two 7-segment displays were imported as the components. The two displays would be used to display the MBR so driver.vhd from the previous projects was added to this project. </p><p> </p><p>The state machine was implemented as follows: the state signal has 3 digits. If reset = 0, then most values, such as stack pointer, RAM_input, RAM_we, would be reset to zero. Then in the clock cycle, when state is &quot;000&quot;, the state machine waits for the signal from the three buttons: if b2 is pushed, MBR gets the value from the switches and go to state &quot;111&quot;; if b3 is pushed, the value of MBR is pushed to the empty space pointed by the stack pointer in RAM and go to state &quot;001&quot;, in which stack pointer increments by 1 to the next free spot and MBR is reset to zero, then it goes to state &quot;111&quot;; if b4 is pushed, the stack pops a value and specific math operation happens between the value and MBR according to the operation switches, in which it goes through two empty states &quot;100&quot; and &quot;101&quot; to wait for the popped value from stack, conducts math operation in state &quot;110&quot;, and then goes to state &quot;111&quot;. State &quot;111&quot; waits until no button is pushed and then goes back to state &quot;000&quot;. The process is shown in the diagram below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/454557961/455180337.png" data-image-src="attachments/454557961/455180337.png" data-unresolved-comment-count="0" data-linked-resource-id="455180337" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="New Note.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="454557961" data-linked-resource-container-version="8"></span></p><p> </p><p>Then the program was tested with the board. The assignments of the board is shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/454557961/455180338.jpg" data-image-src="attachments/454557961/455180338.jpg" data-unresolved-comment-count="0" data-linked-resource-id="455180338" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_2257.jpg" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="454557961" data-linked-resource-container-version="8"></span></p><p> </p><p>Below are the testing videos for each operation. The last video is a more complicated operation testing the stack.</p><p>Multiplication: 3*2=6 (for multiplication, I <span style="color: rgb(34,51,68);">limited multiplication to the low four bits of the two operands</span>)</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/454557961/IMG_2261.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p>Division: 6/3=2 </p><p> <div class="embeddedObject" >
+    <video src="/download/attachments/454557961/IMG_2263.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p>Addition: 3+1=4</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/454557961/IMG_2264.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p>Subtraction: 4-1=3</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/454557961/IMG_2265.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p>Operation including all operations: (((3*2)/2)+1)-1=3</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/454557961/IMG_2259.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><u><strong>Extension</strong></u></p><p><strong>Extension 1</strong>: Write a test bench program in VHDL that you can use to test your circuit with GHDL</p><p>I created the GHDL test bench calculatortest.vhd. The test program did the same operations as the complex one in main task: (((3*2)/2)+1)-1=3, which tested all four operations and the functionality of the stack. The result is shown below, in which the result of each step, 3*2=6, 6/2=3, 3+1=4, 4-1=3, was correctly calculated.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/454557961/455180365.png" data-image-src="attachments/454557961/455180365.png" data-unresolved-comment-count="0" data-linked-resource-id="455180365" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2019-10-26 11:18:9.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="454557961" data-linked-resource-container-version="8"></span></p><p> </p><p><strong>Extension 2</strong>: Put in checks so your stack will never go over or under value &amp; 7-seg display for stack pointer</p><p>There are two check points in the state machine: check point 1 is when b3 is pushed, then the program will only push value to the stack if the stack pointer is smaller than 1111, so that the stack won't be overloaded. Check point 2 is when b4 is pushed, then the program will only pop value from stack if the stack pointer is not zero, so that the program will stop when the stack becomes empty. Then the third 7-segment display was added to show the number of values in the stack (or the next free spot in the stack), which is the leftmost display. A example video is shown below, in which the leftmost display correctly showed the number of values in stack. This functionality can make the user clear about the current situation of the stack.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/454557961/IMG_2270.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><strong>Extension 3</strong>: Expand the number of arithmetic operations</p><p>This extension was done with extension 4. Modulo operation was added to the operations and op was increased from 2-bit to 3-bit. At this time, addition is &quot;000&quot;, subtraction is &quot;001&quot;, multiplication is &quot;010&quot;, division is &quot;011&quot; and others were modulo. The following testing video used &quot;100&quot; as modulo and run the program 8 mod 3 = 2 and the correct result proved the validity of the program.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/454557961/IMG_2274.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><strong>Extension 4</strong>: Expand the size of the data to 12-bit registers</p><p>This extension was done with extension 3. A new RAM was implemented with 16 12-bit words. mbr, RAM_input and output became 12-bit. data became 6-bit since the high 6-bit and the low 6-bit would be input separately. In addition to the modification in the length of data, the state machine was modified/. In Capture state the low 6-bit of data would be input first to mbr by pressing b2, then in state &quot;001&quot; the program would wait for the high 6-bit, which could be input by pressing b3. The state machine diagram is shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/454557961/455180596.jpg" data-image-src="attachments/454557961/455180596.jpg" data-unresolved-comment-count="0" data-linked-resource-id="455180596" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_2275.jpg" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="454557961" data-linked-resource-container-version="8"></span></p><p>3 7-segment displays were used to display mbr. The testing video below tested the program with 1024-512=512, in which 1024 (decimal) = 100 0000 0000 (binary) = 400 (hexadecimal) and 512 (decimal) = 10 0000 0000 (binary) = 200 (hexadecimal). The correct output shows the validity of the new calculator.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/454557961/IMG_2278.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><u><strong>Reflection</strong></u></p><p>During the process of implementing, I learned how to incorporate the knowledge from lectures, such as state machine, stack, and RAM, to create a useful program that has actual meaning in real life, such as the calculator in this project. When debugging, I learned from the common mistake, that assigning statements to execute simultaneously in VHDL.</p><p> </p><p><u><strong>Credits</strong></u></p><p>Thanks to Bruce for pointing out that assign statements execute simultaneously in VHDL.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/454525160.png">task1test.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180337.png">New Note.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180338.jpg">IMG_2257.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180340.mov">IMG_2263.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180341.mov">IMG_2264.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180342.mov">IMG_2265.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180343.mov">IMG_2259.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180344.mov">IMG_2261.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180365.png">image2019-10-26 11:18:9.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180366.mov">IMG_2270.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180599.mov">IMG_2274.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180596.jpg">IMG_2275.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180584.mov">IMG_2274.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/454557961/455180600.mov">IMG_2278.MOV</a> (video/quicktime)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

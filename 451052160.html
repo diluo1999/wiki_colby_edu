@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS232 Project 4</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513832.html">Di Luo&#39;s CS232</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS232 Project 4
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Oct 06, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Description</strong></u></p><p>This project focuses on <span style="color: rgb(34,51,68);">building a simple programmable light display, in which we <span style="color: rgb(34,51,68);">define a machine model with a small instruction set and write a state machine to implement it. </span></span><span style="color: rgb(34,51,68);">The programmable light display is a simple state machine that can execute eight possible instructions and read a sequential program that is 16 instructions long. The state machine has one register, the light register [LR], which holds 8-bits. The eight possible instructions can do the operations such as left shift LR, rotate shift LR, and increment LR by 1, with different bit codes. The design is based on the Moore state machine, and it has two states: fetch and execute. In the fetch state, the instruction register (IR) from program <span style="color: rgb(34,51,68);">read-only memory (ROM)</span> and increments program counter (PC) by 1. In execute state, the instruction from IR gets executed by the <span style="color: rgb(34,51,68);">arithmetic logic unit (ALU)</span>. In the end, the circuit is downloaded to the board and tested with the LEDs on the board.</span></p><p><span style="color: rgb(34,51,68);"><br/></span></p><p><u><strong>Solution</strong></u></p><p><span style="color: rgb(34,51,68);"><span>The main task is based on two VHDL documents: lights.vhd, which is the top-level design, and lightrom.vhd, which is the ALU implementation. We started with the implementation of the ALU, in which the input is a 4-bit vector addr and the output is a 3-bit vector data. In ALU's architecture, data is assigned with different values according to different addr. Then we implemented lights.vhd, in which the inputs are a clock and a reset, and the outputs are a 8-bit vector lights, which controls the 8 green LEDs on the board, and a 3-bit vector IRView, which displays the value of IR with 3 red LEDs on the board. In the architecture of lights.vhd, lightrom is imported as a component. Four internal signals were created, which are 3-bit vector IR, 4-bit unsigned PC, 8-bit unsigned LR, and 3-bit vector ROMvalue. State has two values: sFetch and sExecute. Right before main state machine process starts, component lightrom1 is created and addr from lightroms is connected to casted PC and data is connected to ROMvalue. In the main<span style="color: rgb(34,51,68);"> state machine process, a low value of reset would reset values to all 0s and state to sFetch. Then in each clock circle, <span style="color: rgb(34,51,68);">In the fetch </span>state<span style="color: rgb(34,51,68);">, the IR read from ROMvalue</span><span style="color: rgb(34,51,68);"> and increments PC by 1. In execute state, the instruction from IR gets executed by the </span><span style="color: rgb(34,51,68);">ALU</span><span style="color: rgb(34,51,68);">. After the process ended, IRView is assigned with IR and lights is assigned with casted LR. Before testing, a process including clk and reset was implemented to slow down the clock to see the pattern clearly on the board. Below is the video with the testing instruction codes from project instruction.</span></span></span></span></p><p><span style="color: rgb(34,51,68);"><span><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><div class="embeddedObject" >
+    <video src="/download/attachments/451052160/IMG_2213.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</span></span></span></span></p><p><span style="color: rgb(34,51,68);"><span>The correct pattern showed the validity of the circuit. The circuit was also tested with lightsbench.vhd and GHDL, in which the outputs fit the correct pattern.</span></span></p><p><span style="color: rgb(34,51,68);"><span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/451052160/450989852.png" data-image-src="attachments/451052160/450989852.png" data-unresolved-comment-count="0" data-linked-resource-id="450989852" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="p4t5.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="451052160" data-linked-resource-container-version="7"></span></span></span></p><p><span style="color: rgb(34,51,68);"><span>In the last part of the main task, I created two 16-instruction code by myself, and tested them by replacing the testing code. The first program is stored in lightrom(1).vhd. The program and the testing video are shown below.</span></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/451052160/450989950.png" data-image-src="attachments/451052160/450989950.png" data-unresolved-comment-count="0" data-linked-resource-id="450989950" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-10-06 at 10.12.45 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="451052160" data-linked-resource-container-version="7"></span></p><p><span style="color: rgb(34,51,68);"><span><div class="embeddedObject" >
+    <video src="/download/attachments/451052160/IMG_2214.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</span></span></p><p><span style="color: rgb(34,51,68);"><span>The second one is stored in lightrom(2).vhd, which is shown below accompanying with the testing video.</span></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/451052160/450989952.png" data-image-src="attachments/451052160/450989952.png" data-unresolved-comment-count="0" data-linked-resource-id="450989952" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-10-06 at 10.13.17 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="451052160" data-linked-resource-container-version="7"></span></p><p><span style="color: rgb(34,51,68);"><span><div class="embeddedObject" >
+    <video src="/download/attachments/451052160/IMG_2215.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+<br/></span></span></p><p><span style="color: rgb(34,51,68);"><br/></span></p><p><u><strong>Extension</strong></u></p><p><strong>Extension 1: Make longer programs</strong></p><p>In this extension, I changed addr in lightrom.vhd to 5-bit, so that a longer program can be implemented as shown in the screenshot below. All the VHDL files are stored in folder Extension 1. The pattern performed one 1 go from left to right, then 11 go from left to right, and then 111 go from left to right.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/451052160/450989954.png" data-image-src="attachments/451052160/450989954.png" data-unresolved-comment-count="0" data-linked-resource-id="450989954" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-10-06 at 10.14.21 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="451052160" data-linked-resource-container-version="7"></span></p><p>In order to do so, I also changed lights.vhd by changing all PC and PC related values to 5-bit. The longer patter gave me a chance to display more interesting patterns. Since the program became long, I speeded up the light pattern and the testing video is shown below. </p><p><div class="embeddedObject" >
+    <video src="/download/attachments/451052160/IMG_2216.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><strong>Extension 2: <span style="color: rgb(34,51,68);">Add instructions to the system</span></strong></p><p>In this extension I changed data in lightrom.vhd from 3-bit to 4-bit, by which I can have more instructions. In lights.vhd all IR related values were changed from 3-bit to 4-bit, and in the case statement in sExecute, more cases are added, such as add 2/4/8 and subtract 2/4/8 from LR, and one old case was modified. </p><p>The most important one here is when IR is &quot;1000&quot;, in which PC would be set to &quot;0111&quot;. This would not change the LR value directly but create a loop so that the pattern in the loop would be continuously displayed and those outside the loop would only be executed in the first time. Below is the program and the testing video. Line 1-7 only executed once and then line 8-15 executed three times in the video because the code at line 16 created a loop. The pattern performed like a ball bouncing between two walls.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/451052160/450989956.png" data-image-src="attachments/451052160/450989956.png" data-unresolved-comment-count="0" data-linked-resource-id="450989956" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-10-06 at 10.15.59 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="451052160" data-linked-resource-container-version="7"></span></p><p><div class="embeddedObject" >
+    <video src="/download/attachments/451052160/IMG_2218.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p>All files for Extension 2 are stored in folder Extension 2.</p><p><strong><span style="color: rgb(34,51,68);"><br/></span></strong></p><p><strong><span style="color: rgb(34,51,68);">Extenions 3: </span>Add a hold/free button to the display</strong></p><p>In this extension, I slightly modified lights.vhd by adding an input hold, which is std_logic type, and adding an if statement to the process used to slow down the clock. If hold is 1, which means the button is not pressed, then the clock works normally; if hold is 0, meaning the button is pushed down, then the counter would stop incrementing so that the circuit would &quot;freeze&quot;. The testing video is shown below and all files are stored in fold Extension 3. The leftmost pushbutton (KEY3) controlled hold.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/451052160/IMG_2219.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><strong>Extension 4: Add buttons to speed up or slow down the display</strong></p><p><span style="color: rgb(34,51,68);"><span>In this extension, I added two inputs to lights.vhd, speed_up and spend_down, both in std_logic type. Then I replaced the assignment statement &quot;slowclock &lt;= counter(22)&quot; with a process statement including speed_up and speed_down, which speed up the slowclock if speed_up='0' and speed down the slowclock if speed_down='0'. The testing video is shown below. The first button to the left controlled speed_up and the second button to the left controlled speed_down.</span></span></p><p><strong><span style="color: rgb(34,51,68);"><div class="embeddedObject" >
+    <video src="/download/attachments/451052160/IMG_2220.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+<br/></span></strong></p><p><strong><span style="color: rgb(34,51,68);"><br/></span></strong></p><p><strong><span style="color: rgb(34,51,68);"><u>Source</u></span><span style="color: rgb(34,51,68);"> </span></strong></p><p><span style="color: rgb(34,51,68);"><span>TA: Xiaoyue Zheng</span></span></p><p><span style="color: rgb(34,51,68);"><span>Website: <a href="https://www.csee.umbc.edu/portal/help/VHDL/numeric_std.vhdl" class="external-link" rel="nofollow">https://www.csee.umbc.edu/portal/help/VHDL/numeric_std.vhdl</a></span></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989851.mov">IMG_2213.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989852.png">p4t5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989853.png">firstone.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989854.mov">IMG_2214.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989855.png">secondone.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989856.mov">IMG_2215.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989857.png">ext1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989858.mov">IMG_2216.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989859.png">ext2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989860.png">ext2(2).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989861.mov">IMG_2218.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989862.mov">IMG_2219.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989866.mov">IMG_2220.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989950.png">Screen Shot 2019-10-06 at 10.12.45 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989952.png">Screen Shot 2019-10-06 at 10.13.17 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989954.png">Screen Shot 2019-10-06 at 10.14.21 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451052160/450989956.png">Screen Shot 2019-10-06 at 10.15.59 PM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

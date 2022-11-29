@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS151 Project 5</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513786.html">Di Luo&#39;s CS151</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS151 Project 5
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Oct 08, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><u>Description:</u></strong></p><p>In Project 5, I need to create a collage, in which some pictures cover each other. In order to do so, I need to create a program that processes a list defining a collage and builds the resulting image. The collage list information can specify if the program should apply an effect and/or an alpha blend to each image. <span style="color: rgb(34,51,68);">In order to achieve the final goal, I created <span style="color: rgb(34,51,68);">a collage <span style="color: rgb(34,51,68);">list of lists</span> containing all the information of the images and I can also specify if the program should apply an effect or an alpha blend to each image. I also created </span>a few new functions. The readImage function </span>reads in the files in the collage and stores the Image objects in the list; <span style="color: rgb(34,51,68);">getImageSize and buildCollage functions process the collage list information and build the output image. The placeImageNoBkg function is identical to placeImage function but it only transfers non-green screen pixels into the destination image.</span></p><p> </p><div><u><strong>Task 1</strong></u><strong><u><br/></u></strong></div><div>First, I created a collage list that contains a few lists. Each inner list contains the essential information of each image that is input, such as:<ul><li>Filename of the image</li><li>X offset in the collage</li><li>Y offset in the collage</li><li>Effect for the image</li><li>Alpha blend value</li><li>The Image object (after being read from a file)</li></ul><p> </p></div><div>I also wrote a function getImageSize helping the program to determine how big the background image should be to contain all the images. In order to do so I created two variables rows and cols that <span style="color: rgb(34,51,68);">keep track of the biggest number the function sees in the collage list that represents the bottom row and the rightmost col of an image in the collage.</span></div><div><u><strong><br/></strong></u></div><div><div><u><strong>Task 2</strong></u></div><div>Second, I added another term into each sublist, which is a Boolean NoBkg that determines if the green background of the image should be removed when the image is placed into the collage. Then I created the function buildCollage to put each image that is modified by alpha bleed, filters and other elements into the background to create a collage. Some images overlapped with others.</div><div><u><strong><br/></strong></u></div><div><div><u><strong>Task 3</strong></u></div><div><span style="color: rgb(34,51,68);">Then I created a function placeImageNoBkg that <span style="color: rgb(34,51,68);">is identical to placeImage function but it only transfers non-green screen pixels into the destination image.</span></span></div><div><span style="color: rgb(34,51,68);"><br/></span></div><div><div><u><strong>Task 4</strong></u></div><div>After that, I added a if statement at the end of the buildCollage function to determine <span style="color: rgb(34,51,68);">whether to call placeImage or placeImageNoBkg.</span></div><div><span style="color: rgb(34,51,68);"><br/></span></div></div></div><div><div><u><strong>Task 5</strong></u></div><div>Then I created a new file mycollage.py, in which I <span style="color: rgb(34,51,68);">created a collage information list, called readImages, called buildCollage, then wrote the image to a file mycollage.ppm. Six different source images were included and were input from command line arguments, different effects and alpha blend were used to modify the original picture so that they looks different and can overlap with each other since pictures are half-transparent under the effect of alpha blend.</span></div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/415434108/415728602.png" data-image-src="attachments/415434108/415728602.png" data-unresolved-comment-count="0" data-linked-resource-id="415728602" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-07 at 2.24.43 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span>(Required picture 1)</div><div><div><u><strong><br/></strong></u></div><div><u><strong>Task 6</strong></u></div><div>Finally, I created another new file named coverphoto.py, in which three different pictures were input from command line arguments to create <span style="color: rgb(34,51,68);">a FB cover photo and the photo was stored in the file cover photo.ppm. </span><span style="color: rgb(34,51,68);">The collage is three times as wide as it is tall and the three images overlapped with each other to create the collage. R</span><span style="color: rgb(34,51,68);">andom effects were chosen for each images.</span></div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/415434108/415728603.png" data-image-src="attachments/415434108/415728603.png" data-unresolved-comment-count="0" data-linked-resource-id="415728603" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-07 at 2.49.31 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span>(Required picture 2)</div><div><u><strong><br/></strong></u></div><div><u><strong>Extensions</strong></u></div><div>For extensions, first I wrote a group of print statements in getImageSize function to acquire the width and height of each image.</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/415434108/415728607.png" data-image-src="attachments/415434108/415728607.png" data-unresolved-comment-count="0" data-linked-resource-id="415728607" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-07 at 3.03.53 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/415434108/415728608.png" data-image-src="attachments/415434108/415728608.png" data-unresolved-comment-count="0" data-linked-resource-id="415728608" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-06 at 10.15.09 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></div><div>Second, I created new filters swapRGB, which swaps all three colors, and inverse, which changes the color from (r, g, b) to (255-r, 255-g, 255-b) and slightly changed the darker filter from Project 4. I also used the grayScale filter which is more complex than others.</div><div> </div><div>Third, I e<span style="color: rgb(34,51,68);">nabled the placeImageNoBkg function to handle both the blue and green screens. (the file blueDi.ppm is blue screen and the file greenDi.ppm is green screen)</span></div><div><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/415434108/415728604.png" data-image-src="attachments/415434108/415728604.png" data-unresolved-comment-count="0" data-linked-resource-id="415728604" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-06 at 11.23.22 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></span></div><div><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/415434108/415728605.png" data-image-src="attachments/415434108/415728605.png" data-unresolved-comment-count="0" data-linked-resource-id="415728605" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-06 at 11.23.03 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></span></div><div><span style="color: rgb(34,51,68);"><br/></span></div><div><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);">Fourth, I made</span></span> an additional program in extensions.py that generated a collage with triangle arrangement. </div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/415434108/415728609.png" data-image-src="attachments/415434108/415728609.png" data-unresolved-comment-count="0" data-linked-resource-id="415728609" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-07 at 2.42.34 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="750" src="attachments/415434108/415728618.png" data-image-src="attachments/415434108/415728618.png" data-unresolved-comment-count="0" data-linked-resource-id="415728618" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-07 at 3.47.38 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></div><div>Fifth, I add an additional option mirror to the collage information list. It is a boolean and when it is True, the image would be mirrored, like the two <span style="color: rgb(49,49,49);">portraits in the <span>picture</span> above.</span></div><div><span style="color: rgb(49,49,49);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/415434108/415728611.png" data-image-src="attachments/415434108/415728611.png" data-unresolved-comment-count="0" data-linked-resource-id="415728611" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-07 at 3.11.24 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></span></div><div><span style="color: rgb(49,49,49);"><br/></span></div><div>Sixth, I added an additional term scale2 to the collage information list. It is also a boolean and when it is True, the size of the image would be doubled. To achieve that I also needed to modify other functions, such as getImageSize, buildCollage, placeImage and placeImageNoBkg. Lots of if statements were used to determine the size of the background when the images are doubled, and to determine whether the image should be doubled.</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/415434108/415728612.png" data-image-src="attachments/415434108/415728612.png" data-unresolved-comment-count="0" data-linked-resource-id="415728612" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-07 at 3.11.07 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/415434108/415728613.png" data-image-src="attachments/415434108/415728613.png" data-unresolved-comment-count="0" data-linked-resource-id="415728613" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-07 at 3.12.20 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/415434108/415728614.png" data-image-src="attachments/415434108/415728614.png" data-unresolved-comment-count="0" data-linked-resource-id="415728614" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-07 at 3.12.42 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></div><div>Seventh, I created a list for filters so that I can randomly choose different groups of filters for the images in my collage.</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/415434108/415728610.png" data-image-src="attachments/415434108/415728610.png" data-unresolved-comment-count="0" data-linked-resource-id="415728610" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-06 at 11.41.50 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="415434108" data-linked-resource-container-version="11"></span></div><div><u><strong><br/></strong></u></div><div><u><strong>Reflection</strong></u></div><div>In this project, I reviewed the knowledge I learned in class and lab, including but not only <span style="color: rgb(34,51,68);">Zelle graphics package,</span> parameters, loops, conditional statements, lists, random statement and command line arguments. I learned how to create a list of lists that stores the information of each image into each sublist so that when I created a collage I can specify the offset location, alpha blend, filter of each image with the terms in the sublist and store the source image in the last term of each sublist. When I need to create a collage, I can easily run the function buildCollage to use the information in the list to conveniently create the collage. I also learned how to determine if a specific part should be placed into the collage.</div><div><u><strong><br/></strong></u></div><div><u><strong>Source</strong></u></div></div></div></div><p>I worked on this project by myself.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728594.png">Screen Shot 2018-10-06 at 4.46.08 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728595.png">Screen Shot 2018-10-06 at 8.55.42 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728602.png">Screen Shot 2018-10-07 at 2.24.43 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728603.png">Screen Shot 2018-10-07 at 2.49.31 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728604.png">Screen Shot 2018-10-06 at 11.23.22 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728605.png">Screen Shot 2018-10-06 at 11.23.03 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728606.png">Screen Shot 2018-10-07 at 2.50.50 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728607.png">Screen Shot 2018-10-07 at 3.03.53 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728608.png">Screen Shot 2018-10-06 at 10.15.09 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728609.png">Screen Shot 2018-10-07 at 2.42.34 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728610.png">Screen Shot 2018-10-06 at 11.41.50 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728611.png">Screen Shot 2018-10-07 at 3.11.24 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728615.png">Screen Shot 2018-10-07 at 3.11.07 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728616.png">Screen Shot 2018-10-07 at 3.12.20 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728617.png">Screen Shot 2018-10-07 at 3.12.42 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728612.png">Screen Shot 2018-10-07 at 3.11.07 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728613.png">Screen Shot 2018-10-07 at 3.12.20 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728614.png">Screen Shot 2018-10-07 at 3.12.42 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/415434108/415728618.png">Screen Shot 2018-10-07 at 3.47.38 AM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

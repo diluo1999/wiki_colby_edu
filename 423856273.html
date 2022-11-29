@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS231 Project 3: Sudoku</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513827.html">Di Luo&#39;s CS231</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS231 Project 3: Sudoku
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Mar 05, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong style="text-decoration: underline;">Description</strong></p><p><span style="color: rgb(34,51,68);">In this project I explored the game of Sudoku by writing a stack-based solver for the game that implements a depth-first search algorithm. I implemented four classes, including Cell class and CellStack class that I created in lab, Board class, and Sudoku class. Then in order to show the game vividly I also used LandscapeDisplay class written by Prof. Maxwell to display the game. By solving Sudoku with different numbers of initial values that is given and locked, I also explore how the number of starting values provided affects the complexity of the search for a solution.</span></p><p><strong style="text-decoration: underline;"><br/></strong></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong>Solution</strong></strong></strong></p><p>Firstly, I continued using Cell class and CellStack class that I created in lab, and then I created Board class, which <span style="color: rgb(34,51,68);">holds the array of Cells that make up the Sudoku board. In Board class I implemented different constructors, one can create a board with all entries 0 and another can <span style="color: rgb(34,51,68);">read a board from a file. There are many useful functions, such as read(), which <span style="color: rgb(34,51,68);">fills in the board values when given a file with 9 rows of 9 digits separated by spaces, and validValue(), which </span></span></span>tests if the given value is a valid value at the given row and column of the board, and <span style="color: rgb(34,51,68);">and validSolution(), which </span>returns true if the board is solved.</p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"> </span></span></span></p><p><span><span style="color: rgb(34,51,68);"><span>Secondly I created Sudoku class, which </span></span><span><span style="color: rgb(34,51,68);"><span>actually solves a puzzle. One of its constructors creates a board with all entries 0 and another one </span></span><span><span style="color: rgb(34,51,68);"><span>takes in an int parameter that is the number of populated starting values N. Then I created solve() which solves the board. It uses </span></span><span style="color: rgb(34,51,68);">depth-first search algorithm, which</span><span><span style="color: rgb(34,51,68);"><span> goes Cell by Cell testing values from 1 to 9 in order. All of the locations visited so far get pushed onto a stack. If the algorithm gets to a Cell and can't find a valid value, it backs up to the prior Cell and tries a different number there. Finally I finished the function and it worked perfectly in the test main function, where I printed out the original board, the time it took to solve, and the solved board, as shown in the picture below:</span></span></span></span></span></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="210" src="attachments/423856273/423921145.png" data-image-src="attachments/423856273/423921145.png" data-unresolved-comment-count="0" data-linked-resource-id="423921145" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-05 at 4.50.16 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="423856273" data-linked-resource-container-version="6"></span></p><p>One of the interesting bits in solve() is that when I check the cells in the board one by one, the next cell can be in the next row, so I used this double if statement to make sure the code is analyzing valid values:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="200" src="attachments/423856273/423921151.png" data-image-src="attachments/423856273/423921151.png" data-unresolved-comment-count="0" data-linked-resource-id="423921151" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-05 at 5.24.35 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="423856273" data-linked-resource-container-version="6"></span></p><p> </p><p>Finally, I created two different draw() functions, one for Cell class and the other for Board.class. By running Sudoku class and using the Landscape class and Graphics class, I successfully enabled the code to solve Sudoku and showed the game in a console, which is shown below:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/423856273/423921146.png" data-image-src="attachments/423856273/423921146.png" data-unresolved-comment-count="0" data-linked-resource-id="423921146" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-05 at 3.55.35 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="423856273" data-linked-resource-container-version="6"></span></p><p> </p><p>In the exploration I run<span style="color: rgb(34,51,68);"> 5 boards for each case of 10, 20, 30, and 40 initial values, and the result is shown below:</span></p><p><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/423856273/423921147.png" data-image-src="attachments/423856273/423921147.png" data-unresolved-comment-count="0" data-linked-resource-id="423921147" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-05 at 4.13.37 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="423856273" data-linked-resource-container-version="6"></span></span></p><p><span style="color: rgb(34,51,68);">We can see that as the number of initial values increases, it is less unlikely that the board can be solved. Furthermore, we can also see that as the number of initial values increases, the time taken to solve the board also increases since the more numbers give more limitation.</span></p><p><span style="color: rgb(34,51,68);"><span><br/></span></span></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong>Extension</strong></strong></strong></strong></strong></p><p>For the first extension I <span style="color: rgb(34,51,68);">enabled your read method to handle the files with extra spaces. I started with readLine() method, which reads the lines in the sudoku board in the file. Then I split then by (“ “), and then call the trim() method to trim the extra space in each string. So I will only take the string that is not empty, and throw them into the board. The trim method is shown below.</span></p><p><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/423856273/423921148.png" data-image-src="attachments/423856273/423921148.png" data-unresolved-comment-count="0" data-linked-resource-id="423921148" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-05 at 5.16.03 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="423856273" data-linked-resource-container-version="6"></span></span></p><p><span style="color: rgb(34,51,68);"><br/></span></p><p><span style="color: rgb(34,51,68);">For the second extension I changed the draw() methods in both Cell class and Board class so that the numbers in the image of the game have different colors and other parts of the image also become more decorated, which is shown below. Each color represents a unique number from 0 to 9. 0 has white color so that it seems to be disappeared on the white background.</span></p><p><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/423856273/423921152.png" data-image-src="attachments/423856273/423921152.png" data-unresolved-comment-count="0" data-linked-resource-id="423921152" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-03-05 at 6.02.43 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="423856273" data-linked-resource-container-version="6"></span></span></p><p><span style="color: rgb(34,51,68);">For the third extension I created another solve() according to <a href="https://www.baeldung.com/java-sudoku" class="external-link" rel="nofollow">https://www.baeldung.com/java-sudoku</a>, which is based on backtrack recursion. In the function there is a nested for loop, which checks if it can find a unlocked and empty cell, meaning that the cell equals 0. If so, then the code will go on and get a value for the cell; if not, meaning that the method loop through all the board and find no cell needed to be solved, which reaches the base case, then it returns false. Then to solve the Sudoku, first it will go in to the first possibility saying that there’s cell to be solved. Then it loops through possible values, and if there’s possible value, it tests if it’s valid. if it’s valid, then it recurses the solve method to solve the next cell. If every possible value is not valid, the function sets the current cell to zero, and return false to recurse back to the previous cell, and test the value of the previous cell again. If it fails again, backtrack further. </span></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong><strong><u><br/></u></strong></strong></strong></strong></strong></strong></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong><strong><u>Reflection</u></strong></strong></strong></strong></strong></strong></p><p>In this project I learned how to implement a stack and how to use the stack to solve problems, which in this case is the Sudoku game and the solver is stack-based. By solving Sudoku and also analyze the result of solving, I also get to know more about Sudoku and the mathematics and the logic behind it. Furthermore, the exploration part surprised me since it reminded that the <span style="color: rgb(34,51,68);">algorithm that we created for any code can be useful to examine a mathematical game. </span>By writing large amounts of code in Java I become more familiar with the language. </p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong><strong><u><br/></u></strong></strong></strong></strong></strong></strong></p><p><strong style="text-decoration: underline;"><strong style="text-decoration: underline;"><strong><strong style="text-decoration: underline;"><strong><strong><u><strong><u>Source</u></strong></u></strong></strong></strong></strong></strong></strong></p><p><a href="https://www.baeldung.com/java-sudoku" class="external-link" rel="nofollow">https://www.baeldung.com/java-sudoku</a></p><p>Thanks to Yingqiao Wang.</p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/423856273/423921145.png">Screen Shot 2019-03-05 at 4.50.16 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/423856273/423921146.png">Screen Shot 2019-03-05 at 3.55.35 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/423856273/423921147.png">Screen Shot 2019-03-05 at 4.13.37 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/423856273/423921148.png">Screen Shot 2019-03-05 at 5.16.03 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/423856273/423921151.png">Screen Shot 2019-03-05 at 5.24.35 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/423856273/423921152.png">Screen Shot 2019-03-05 at 6.02.43 AM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

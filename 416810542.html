@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS151 Project 7</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513786.html">Di Luo&#39;s CS151</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS151 Project 7
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Oct 30, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><u>Description</u></strong></p><p>In Project 7, we need to use our knowledge in turtle and L-system to <span style="color: rgb(34,51,68);">make a scene that consists of fractal shapes, trees, and other turtle graphics. A L-system is a parallel rewrite system that can be used to make complex strings, including a simple base string and a rule to replace the characters in the base string. In our project, we </span><span style="color: rgb(34,51,68);">represent an L-system as a list of items and enable reading L-systems from a file using a simple syntax. Then we combine different L-systems to create a scene with turtle. In the end we would get an abstract image with 3 L-systems, a 3x3 grid of 9 different trees, and a meaningful scene with more L-systems.</span></p><p> </p><div><strong><u>Solutions</u></strong></div><div>First, I rewrote the function drawString() in turtle_interpreter.py, which are the function in the documents we used in the lab to draw the image with the string from L-system, so that we can draw branches of the tree with L-system. I added &quot;[&quot; and &quot;]&quot; as<span style="color: rgb(34,51,68);"> a mechanism for remembering the position and heading the turtle had before it starting the branch. &quot;[&quot; is to save the turtle's heading and position and &quot;]&quot; is to restore the turtle's heading and position to the most recently saved heading and position. It worked well with the L-system in systemB.txt.</span></div><div><span style="color: rgb(34,51,68);"><br/></span></div><div><span style="color: rgb(34,51,68);">Then, I created abstract.py and three L-systems to draw an abstract image. The L-system in system1.txt creates a complex block. The L-system in system2.txt uses <span style="color: rgb(34,51,68);">brackets and </span>creates a tree. The L-system in system3.txt creates a snowflake. I combined the three shapes by drawing them in different colors and different locations and created a centrosymmetric abstract shape. I drew the trees four times to create a cross.</span></div><div><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416810542/416843429.png" data-image-src="attachments/416810542/416843429.png" data-unresolved-comment-count="0" data-linked-resource-id="416843429" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-29 at 10.14.57 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416810542" data-linked-resource-container-version="9"></span>(Required image 1)</span></div><div><span style="color: rgb(34,51,68);"><br/></span></div><div><span style="color: rgb(34,51,68);">Next, I created grid.py containing functions to create and order the 9 trees from L-system in systemB.txt as a 3x3 grid. <span style="color: rgb(34,51,68);">From left to right the number of iterations of the L-system increased from 1 to 3. From top to bottom, the angles of the L-system are respectively 22, 46, and 60. In the end I used a double for loops to create the grid.</span></span></div><div><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416810542/416843570.png" data-image-src="attachments/416810542/416843570.png" data-unresolved-comment-count="0" data-linked-resource-id="416843570" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-30 at 11.08.12 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416810542" data-linked-resource-container-version="9"></span>(Required image 2)</span></span></div><div><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><br/></span></span></div><div><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);">Finally, I created scene.py to draw a meaningful scene with three L-systems. The L-system in roof.txt draws the roof of the house, the one in house.txt draws the base of the house and the one in tree.txt using brackets draws a new tree. I combined them, changed each shape's color and created a scene including a house with brown roof and black base and two trees around the house.</span></span></div><div><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416810542/416843431.png" data-image-src="attachments/416810542/416843431.png" data-unresolved-comment-count="0" data-linked-resource-id="416843431" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-29 at 11.08.12 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416810542" data-linked-resource-container-version="9"></span>(Required image 3)</span></span></div><div><div><u><strong><br/></strong></u></div><div><div><u><strong>Extensions</strong></u></div><div>   </div><div>For extensions, firstly I created two functions four(), which draws four l-system strings forming a cross given an (x,y) anchor, distance and angle, and draw(), which draws a l-system string given an (x,y) anchor, distance, angle and color, to create a cross of four trees and also to make the main code more organized.</div><div>   </div><div>Besides, pop() was used for creating the double for loops when writing the function of grid.</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416810542/416843600.png" data-image-src="attachments/416810542/416843600.png" data-unresolved-comment-count="0" data-linked-resource-id="416843600" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-30 at 11.09.15 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416810542" data-linked-resource-container-version="9"></span></div><div>    </div><div>Then I added two L-system trees to my scene from Project 3. I rewrote task2.py and added two trees as the decorations in the scene from gallery. The picture below shows the new gallery scene.</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416810542/416843469.png" data-image-src="attachments/416810542/416843469.png" data-unresolved-comment-count="0" data-linked-resource-id="416843469" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-30 at 9.11.19 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416810542" data-linked-resource-container-version="9"></span></div><div>     </div><div>Next, I rewrote the abstract.py to create the function abstract() with parameters x, y, scale so that the abstract image can be drawn with different scale in different locations. Extension can be used by deleting &quot;#&quot; in front of the extension codes.</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/416810542/416843490.png" data-image-src="attachments/416810542/416843490.png" data-unresolved-comment-count="0" data-linked-resource-id="416843490" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-30 at 9.37.01 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416810542" data-linked-resource-container-version="9"></span></div><div>     </div><div>Moreover, likewise I rewrote the grid.py so that the grid can be drawn with different scale in different locations. Extension can be used by deleting &quot;#&quot; in front of the extension codes.</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/416810542/416843571.png" data-image-src="attachments/416810542/416843571.png" data-unresolved-comment-count="0" data-linked-resource-id="416843571" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-30 at 11.10.04 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416810542" data-linked-resource-container-version="9"></span></div><div>      </div><div>Finally, I created grid2.py which draws a grid of trees like grid.py but from top to bottom, the season changes along Spring, Fall and Winter, meaning that the color of the leaves changes from green to orange to black. A lot of new symbols were added to drawString().</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416810542/416843602.png" data-image-src="attachments/416810542/416843602.png" data-unresolved-comment-count="0" data-linked-resource-id="416843602" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-30 at 11.26.18 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416810542" data-linked-resource-container-version="9"></span></div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416810542/416843601.png" data-image-src="attachments/416810542/416843601.png" data-unresolved-comment-count="0" data-linked-resource-id="416843601" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-10-30 at 11.23.06 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416810542" data-linked-resource-container-version="9"></span></div><div>   </div><div><div><u><strong><br/></strong></u></div><div><u><strong>Reflection</strong></u></div><div>In project 7, I reviewed the knowledge in turtle and L-system that we learned in class. I got more familiar with how to create a L-system with lists and strings, how to use L-system to draw complex geometric shapes, and how to combine different shapes to get a scene that I want. More specific, I learned how to use brackets to store the location and the heading of the turtle as a state and return to this state after a series of drawings to create more complex shapes, such as trees.</div><div><u><strong><br/></strong></u></div><div><u><strong><u><strong>Source</strong></u></strong></u></div><div><u><strong><u><strong><a href="http://algorithmicbotany.org/papers/abop/abop.pdf" class="external-link" rel="nofollow">http://algorithmicbotany.org/papers/abop/abop.pdf</a></strong></u></strong></u></div><u><strong><br/></strong></u></div><u><strong><br/></strong></u></div><u><strong><br/></strong></u></div><p><strong><u><br/></u></strong></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843429.png">Screen Shot 2018-10-29 at 10.14.57 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843430.png">Screen Shot 2018-10-29 at 10.39.21 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843431.png">Screen Shot 2018-10-29 at 11.08.12 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843469.png">Screen Shot 2018-10-30 at 9.11.19 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843490.png">Screen Shot 2018-10-30 at 9.37.01 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843493.png">Screen Shot 2018-10-30 at 9.51.24 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843496.png">Screen Shot 2018-10-30 at 9.52.38 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843503.png">Screen Shot 2018-10-30 at 9.57.05 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843570.png">Screen Shot 2018-10-30 at 11.08.12 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843571.png">Screen Shot 2018-10-30 at 11.10.04 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843600.png">Screen Shot 2018-10-30 at 11.09.15 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843601.png">Screen Shot 2018-10-30 at 11.23.06 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416810542/416843602.png">Screen Shot 2018-10-30 at 11.26.18 PM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

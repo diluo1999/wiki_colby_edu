@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS151 Project 1</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513786.html">Di Luo&#39;s CS151</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS151 Project 1
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Sep 11, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <ol><li><strong>Summary</strong></li></ol><p>The purpose of this project is to understand the basic knowledge of python by developing algorithms to draw different shapes with python and combine the shapes to create more complex patterns. In this project, I wrote my codes in TextWrangler and completed the process of drawing by running my codes in Terminal. Personally, I created 2 shapes and combined the 2 shapes to create a new pattern. Besides, I added parameters into a function of a shape that I created so that the size of the shape becomes adjustable. Furthermore, some extensions were done to further explore the world of python.</p><p> </p><p>     2.  <strong>Description of the solution</strong></p><p>For shapeOne I created a cross which is shown in the picture below:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" draggable="false" height="198" width="322" src="attachments/413631192/413565169.png" data-image-src="attachments/413631192/413565169.png" data-unresolved-comment-count="0" data-linked-resource-id="413565169" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-10 at 7.52.46 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span>(Required Image 1)</p><p>After drawing the first line going from lower left to upper right, in order to move the turtle to lower right and draw another line, I used the command below to move the pen without drawing on the paper.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="100" src="attachments/413631192/413565294.png" data-image-src="attachments/413631192/413565294.png" data-unresolved-comment-count="0" data-linked-resource-id="413565294" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-11 at 9.37.38 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></p><p>For shapeTwo I created a rectangle which is shown in the picture below:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" draggable="false" height="228" width="338" src="attachments/413631192/413565170.png" data-image-src="attachments/413631192/413565170.png" data-unresolved-comment-count="0" data-linked-resource-id="413565170" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-10 at 7.53.01 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span>(Required Image 2)</p><p>Then I combined shapeOne and shapeTwo to create shapeThree, which is a rectangle with a cross inside and is shown in the picture below. In order to put the center of the cross in the middle of the rectangle, mathematics calculation was conducted and the data was used in the <span style="color: rgb(34,51,68);">code snippets shown below that made the turtle</span> move to the start point of shapeOne when the drawing of shapeTwo was finished.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="100" src="attachments/413631192/413565295.png" data-image-src="attachments/413631192/413565295.png" data-unresolved-comment-count="0" data-linked-resource-id="413565295" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-11 at 9.46.12 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" draggable="false" height="198" width="310" src="attachments/413631192/413565171.png" data-image-src="attachments/413631192/413565171.png" data-unresolved-comment-count="0" data-linked-resource-id="413565171" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-10 at 7.53.20 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></p><p> </p><p>Moreover, in order to make the shapes I created more flexible, I tried to add parameters into the function of the shape. So I created shapeFour, which is a square. In the function of shapeFour, the side length of the square was set as a parameter so that the side length becomes variable, making it possible to enlarge or shrink the square. Finally, I created a shapeFive function, which calls shapeFour function many times with different parameters and created the pattern shown below:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" draggable="false" height="366" width="300" src="attachments/413631192/413565195.png" data-image-src="attachments/413631192/413565195.png" data-unresolved-comment-count="0" data-linked-resource-id="413565195" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-10 at 7.53.38 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span>(Required Image 3)</p><p> </p><p>     3.  <strong>Description of the extensions</strong></p><div>Regarding the extensions, I chose to write a function that can draw <span style="color: rgb(34,51,68);">an N-gon which has adjustable distance of sides and the number of sides. (<strong>Extension 1</strong>) When I was writing the function of N-gon, I created two parameters for the function, one is &quot;x&quot; controlling the number of sides and the other is &quot;sideLength&quot; controlling the side length. With my knowledge in geometry, I controlled the angle according to the rule states that &quot;the sum of the exterior angles of a N-gon is 360 degree&quot; so that the angle equals to 360/x.</span></div><div><span style="color: rgb(34,51,68);"> </span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="150" src="attachments/413631192/413565298.png" data-image-src="attachments/413631192/413565298.png" data-unresolved-comment-count="0" data-linked-resource-id="413565298" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-11 at 10.04.48 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></div><div><span style="color: rgb(34,51,68);">Then I faced a problem: how can I repeat my</span><span style="color: rgb(34,51,68);"> instructions of drawing the sides and turning right with an angle for certain amount of times? Since I was drawing N-gon, the times repeated should be the same as the number of the sides. I talked with Jackie (TA) and she taught me how to apply</span><span style="color: rgb(34,51,68);"> &quot;for Loop&quot; into my function to <span>complete</span> the work of <span style="color: rgb(0,0,0);">iteration</span>. (</span><strong style="color: rgb(34,51,68);">Extension 2</strong><span style="color: rgb(34,51,68);">)</span></div><div><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="150" src="attachments/413631192/413565299.png" data-image-src="attachments/413631192/413565299.png" data-unresolved-comment-count="0" data-linked-resource-id="413565299" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-11 at 10.08.09 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></span></div><div><span style="color: rgb(34,51,68);">Then the function was complete and I tried to draw some N-gons having different number of sides and the same side length.</span></div><div><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="100" src="attachments/413631192/413565301.png" data-image-src="attachments/413631192/413565301.png" data-unresolved-comment-count="0" data-linked-resource-id="413565301" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-11 at 10.12.34 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></span></div><div><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="100" src="attachments/413631192/413565300.png" data-image-src="attachments/413631192/413565300.png" data-unresolved-comment-count="0" data-linked-resource-id="413565300" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-11 at 10.12.04 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></span></div><div><span style="color: rgb(34,51,68);">And then some N-gons having different number of sides and side lengths.</span></div><div><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="100" src="attachments/413631192/413565302.png" data-image-src="attachments/413631192/413565302.png" data-unresolved-comment-count="0" data-linked-resource-id="413565302" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-11 at 10.12.47 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></span></span></div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="100" src="attachments/413631192/413565303.png" data-image-src="attachments/413631192/413565303.png" data-unresolved-comment-count="0" data-linked-resource-id="413565303" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-11 at 10.12.09 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></div><div>In order to speed up the drawing, I used the &quot;speed()&quot; to fasten the speed that the turtle moves.<span style="color: rgb(34,51,68);"> (</span><strong>Extension 3</strong><span style="color: rgb(34,51,68);">)</span></div><div><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="100" src="attachments/413631192/413565304.png" data-image-src="attachments/413631192/413565304.png" data-unresolved-comment-count="0" data-linked-resource-id="413565304" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-11 at 10.12.39 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></span></div><div><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);">Then I tried to build a hierarchy of functions. (<strong>Extension 4</strong>) First I create the function of &quot;triangle&quot;, which draws a shape of triangle. Then by applying &quot;triangle&quot;, I created the function of &quot;biggerTriangle&quot;, which creates a shape of a bigger triangle that is combined with three triangle in function &quot;triangle&quot;. Furthermore, the function of &quot;biggerTriangle&quot; was also applied to draw a much bigger triangle, which is composed by three bigger triangles and has a lot of triangles inside so that its function was named &quot;multipleTriangles&quot;.</span></span></div><div><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="75" src="attachments/413631192/413565244.png" data-image-src="attachments/413631192/413565244.png" data-unresolved-comment-count="0" data-linked-resource-id="413565244" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-10 at 9.41.02 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="100" src="attachments/413631192/413565245.png" data-image-src="attachments/413631192/413565245.png" data-unresolved-comment-count="0" data-linked-resource-id="413565245" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-10 at 9.41.33 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="100" src="attachments/413631192/413565246.png" data-image-src="attachments/413631192/413565246.png" data-unresolved-comment-count="0" data-linked-resource-id="413565246" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-10 at 7.50.29 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413631192" data-linked-resource-container-version="13"></span></span></span></div><p>     4.  <strong>Description of what I learned</strong></p><p>In this project I learned how to use functions of simple shapes to shorten the code of more complex pattern, which makes the code more readable. Moreover, I learned how to apply &quot;for loop&quot; to iterate my instructions of drawing, which can be very helpful in controlling the number of repetitions. Besides, I realized the importance of carefulness since sometimes the algorithm won't be processed by Terminal if there is any tiny mistake, such as missing a colon after a definition and missing an indentation in front of the code. </p><p><strong><br/></strong></p><p><strong>Thanks for the help of Professor Layton, Jackie (TA), and the websites including:</strong></p><p><strong>25.1. turtle — Turtle graphics – Python Wiki</strong> (<a href="https://docs.python.org/3/library/turtle.html" class="external-link" rel="nofollow">https://docs.python.org/3/library/turtle.html</a>)<strong> </strong></p><p><strong>ForLoop – Python Wiki </strong>(<a href="https://wiki.python.org/moin/ForLoop" class="external-link" rel="nofollow">https://wiki.python.org/moin/ForLoop</a>)<strong>!</strong></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565169.png">Screen Shot 2018-09-10 at 7.52.46 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565170.png">Screen Shot 2018-09-10 at 7.53.01 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565171.png">Screen Shot 2018-09-10 at 7.53.20 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565195.png">Screen Shot 2018-09-10 at 7.53.38 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565211.png">Screen Shot 2018-09-10 at 9.12.17 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565222.png">Screen Shot 2018-09-10 at 9.12.32 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565227.png">Screen Shot 2018-09-10 at 9.30.34 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565229.png">Screen Shot 2018-09-10 at 9.35.27 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565305.png">Screen Shot 2018-09-10 at 9.41.02 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565306.png">Screen Shot 2018-09-10 at 9.41.33 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565307.png">Screen Shot 2018-09-10 at 7.50.29 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565292.png">Screen Shot 2018-09-11 at 9.36.38 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565294.png">Screen Shot 2018-09-11 at 9.37.38 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565295.png">Screen Shot 2018-09-11 at 9.46.12 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565298.png">Screen Shot 2018-09-11 at 10.04.48 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565299.png">Screen Shot 2018-09-11 at 10.08.09 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565300.png">Screen Shot 2018-09-11 at 10.12.04 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565360.png">Screen Shot 2018-09-11 at 10.12.34 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565302.png">Screen Shot 2018-09-11 at 10.12.47 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565303.png">Screen Shot 2018-09-11 at 10.12.09 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565309.png">Screen Shot 2018-09-11 at 10.12.39 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565244.png">Screen Shot 2018-09-10 at 9.41.02 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565245.png">Screen Shot 2018-09-10 at 9.41.33 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565246.png">Screen Shot 2018-09-10 at 7.50.29 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565304.png">Screen Shot 2018-09-11 at 10.12.39 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413631192/413565301.png">Screen Shot 2018-09-11 at 10.12.34 AM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

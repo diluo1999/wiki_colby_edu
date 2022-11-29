@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS232 Project 5</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513832.html">Di Luo&#39;s CS232</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS232 Project 5
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Oct 14, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><u>Introduction</u></strong></p><p>This project continues building a programmable light display, which was preliminarily implemented in Project 4. The display is more complicated and the machine language for this project includes both a conditional and an unconditional branch, which enables the loop functionality in my program. The program has three states, sFetch, sExecute1, and sExecute2, and four types of instructions can be executed, including move instructions, which copy data from the source location to the destination, binary instructions, which execute some type of binary operation on two source values and store the result in the destination, branch instructions, which unconditionally branch to the address indicated by the instruction, and conditional branch instructions, which branch to the address only if the source register is equal to zero. To enable IR to store enough information, it is extended to 10 bits long, in which the most significant two digits indicates the type of instruction. The sFetch state increments PC and goes to sExecute1. The sExecute1 state assigns the appropriate value to source signal for move and binary and assigns the appropriate value to PC for branch. The sExecute2 state assigns the value from source signal to appropriate destination for move and binary and does nothing for branch. After implementation, I wrote a program that loads 16 into the light register and has it count down to 0, which flashed between all 1s and all 0s 8 times and repeat from the beginning. Two more programs were wrote and tested.</p><p> </p><p><strong><u>Task</u></strong></p><p>The top-level entity was named as pld2. Then I created pldrom.vhd, which is the ROM of the program, based on last project's lightrom.vhd. The output <em>data</em> were changed to a 10-bit value and the test code was temporarily used.</p><p>Then I created the top-level file pld2.vhd, which is based on lights.vhd in project 4. IR related values were changed to 10 digits. Additional internal signals SRC and ACC were added. Then three states were implemented according to the instruction set shown as follow.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Opcode</th><th class="confluenceTh">Format</th><th class="confluenceTh">Description</th></tr><tr><td class="confluenceTd">00</td><td class="confluenceTd">[C1 C0] [Dest1 Dest0] [Src1 Src0] [Val3 Val2 Val1 Val0]</td><td class="confluenceTd">Move from <br/>SRC to DEST</td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd">Dest10: 00 = ACC, 01 = LR, 10 = ACC low 4 bits, 11 = ACC high 4 bits</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd">Src10: 00 = ACC, 01 = LR, 10 = IR low 4 bits sign extended, 11 = all 1s</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">01</td><td class="confluenceTd">[C1 C0] [Op2 Op1 Op0] [Src1 Src0] [Dest0] [Val1 Val0]</td><td class="confluenceTd">Binary operator<br/>DEST = DEST op SRC</td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd">Op210: 000 = add, 001 = sub, 010 = shift left, 011 = shift right maintain sign bit</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd">Op210: 100 = xor, 101 = and, 110 = rotate left, 111 = rotate right</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd">Src10: 00 = ACC, 01 = LR, 10 = IR low 2 bits sign extended, 11 = all 1s</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd">Dest0: 0 = ACC, 1 = LR</td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd">10</td><td class="confluenceTd">[C1 C0] [U3 U2 U1 U0] [Addr3 Addr2 Addr1 Addr0]</td><td class="confluenceTd">Branch to ADDR</td></tr><tr><td class="confluenceTd">11</td><td class="confluenceTd">[C1 C0] [Src0] [U2 U1 U0] [Addr3 Addr2 Addr1 Addr0]</td><td class="confluenceTd">Branch to ADDR if SRC is 0</td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd">Src0: 0 = ACC, 1 = LR</td><td class="confluenceTd"> </td></tr></tbody></table></div><p> </p><p>After implementation, the program was tested with given pldbench.vhd on GHDL. The test result on GTKWave is shown below, which is identical to the result in project instruction and proves the validity of the circuit.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/451543312/452198421.png" data-image-src="attachments/451543312/452198421.png" data-unresolved-comment-count="0" data-linked-resource-id="452198421" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="gtkwave.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="451543312" data-linked-resource-container-version="10"></span></p><p> </p><p>Then I created the required program that <span style="color: rgb(34,51,68);">loads 16 into the light register and has it count down to 0, and then flashes between all 1s and all 0s 8 times and repeat from the beginning. This program is stored in pldrom0.vhd, which contains step by step description of the program. I tested the program with GHDL and the GTKWave test result is shown below. I added another output ACCView to show the value of ACC.</span></p><p><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="750" src="attachments/451543312/452198425.png" data-image-src="attachments/451543312/452198425.png" data-unresolved-comment-count="0" data-linked-resource-id="452198425" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="pldrom0test.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="451543312" data-linked-resource-container-version="10"></span></span></p><p><span style="color: rgb(34,51,68);"><br/></span></p><p><span style="color: rgb(34,51,68);">I also created two programs on my own in pldrom1.vhd and pldrom2.vhd. Both programs used branch instructions. The first program in pldrom1.vhd has a pattern that </span>looks like shooting a bullet from left to right. Three bullets are shot in every iteration and after three iterations, the gun gradually fades to the left. The more detailed description is in the VHDL file. The testing video is shown below.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/451543312/IMG_2227.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p>The second program in pldrom2.vhd has a pattern that looks like a bubble moving between lights. The zig-zag movements continue for 7 times and then jump to the initial state, which would look like the movements continue forever. The more detailed description is in the VHDL file. The testing video is shown below.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/451543312/IMG_2228.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><strong><u>Extension</u></strong></p><p><strong>Extension 1: Make longer programs (make the ROM bigger)</strong></p><p>To make longer programs, I modified addr in ROM from 4 bits to 5 bits, and also changed addr and PC in pld2.vhd to 5 bits. In addition, branch instructions were modified to watch out for the last 5 digits of opcode since the number of digits of address increased by 1. The detailed description of the program is in pldrom.vhd in Extension 1 folder, in which the program originally from pldrom2.vhd was modified to a longer program, and the bubble changed from unlighted LEDs to lighted LEDs in the middle of the program. The testing video is shown below.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/451543312/IMG_2232.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><strong>Extension 2: Add instructions to the instruction set. You can add variations on the branch instructions without adding more bits to the instruction length by making use of their unused bits. For example, you could add branch conditions like &gt; 0, &lt; 0 or make comparisons between the values in the two registers</strong></p><div><p>To add more instructions, I edited the conditional branch instructions so that it can not only check if SRC = 0 but also if SRC &gt;0, &lt;0, = ACC/LR, or != ACC/LR. The specific type of comparison can be decided by the two unused digits in conditional branch instruction opcode: IR (5 downto 4). Below is the description of the modified conditional instruction opcode.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Opcode</th><th class="confluenceTh">Format</th><th class="confluenceTh">Description</th></tr><tr><td class="confluenceTd">11</td><td class="confluenceTd"><span>[C1 C0] [Src0] [U0] [Comparison] [Addr3 Addr2 Addr1 Addr0]</span></td><td class="confluenceTd"><p>Branch to ADDR if the comparison between</p><p>SRC with other numbers is correct</p></td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd"><span>Src0: 0 = ACC, 1 = LR</span></td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd"><p>Comparison: 00 = &quot;=0&quot;, 01 = &quot;&lt;0&quot;, 10 = &quot;&gt;0&quot;</p><p>11 = &quot;ACC = LR&quot; when Src0 = 0; &quot;ACC != LR&quot; when Src0 = 0</p></td><td class="confluenceTd"> </td></tr><tr><td class="confluenceTd"> </td><td class="confluenceTd"> </td><td class="confluenceTd"> </td></tr></tbody></table></div><p>Then I created a testing program that tests different comparison instructions. The testing video is shown below, which shows that the comparison instructions are correct since the output on the board is the same as the predicted one in description below.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/451543312/452821114.png" data-image-src="attachments/451543312/452821114.png" data-unresolved-comment-count="0" data-linked-resource-id="452821114" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="test ext2.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="451543312" data-linked-resource-container-version="10"></span></p><p><div class="embeddedObject" >
+    <video src="/download/attachments/451543312/IMG_2233.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p></div><p> </p><p><strong>Extension 3: Write a simple assembler (in python, for example) that converts instructions from a simple, human readable language, into the set of machine instructions for pldrom</strong></p><p>I created the assembler in assembler.py in folder extension 3, which has four functions representing four types of instructions. By inputting the English words as function parameters, I can get the opcode for the function. In the main function I tested with the program in pldrom2.vhd and the output is the same as the opcode I wrote, which is shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/451543312/452821246.png" data-image-src="attachments/451543312/452821246.png" data-unresolved-comment-count="0" data-linked-resource-id="452821246" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-10-14 at 4.25.29 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="451543312" data-linked-resource-container-version="10"></span></p><p><strong><br/></strong></p><p><strong>Extension 4: Add a hold/freeze button to the display</strong></p><p>To enable the hold functionality, I added an input hold to pld2.vhd, which is controlled by the leftmost pushbutton on the board (KEY3). Then I added one more if statement in the process of slowclock. If hold button is pushed, then the clock stops counting so the circuit is frozen. If not pushed, then the clock counts normally. The testing video is shown below.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/451543312/IMG_2230.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><strong>Extension 5: Add one or more switches/buttons that let you speed up or slow down the clock</strong></p><p>To control the speed of the program, I added three inputs, which are speed_upup, speed_up and speed_down, to pld2.vhd, which are respectively controlled by the leftmost pushbutton (KEY3), the second leftmost push button (KEY2), and the third leftmost push button (KEY1). Then I added a process on the three inputs after the process of slowclock so that pushing diferent button would give a different speed to the program. The testing video is shown below, in which the first part is normal speed, the second part is lowest speed, the third part is the second highest speed and the final part is the highest speed.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/451543312/IMG_2231.MOV" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+</p><p> </p><p><strong><u>Conclusion</u></strong></p><p>In this project I learned how to implement branch instructions, which enable the loop functionality for the circuit so that more sophisticated circuit/program/pattern can be created. I also learned how to read and use more complicated instruction code, which increased from 3-bit in the last project to 10-bit. In order to differentiate different instructions, a lot of nested case statements were used to check different digits in the instruction code.</p><p> </p><p><strong><u>Assistance</u></strong></p><p>Student/TA: Qingbo Liu, Xiaoyue Zheng</p><p> </p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452198421.png">gtkwave.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452198425.png">pldrom0test.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452198426.mov">IMG_2227.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452198427.mov">IMG_2228.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452821056.mov">IMG_2230.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452821060.mov">IMG_2231.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452821089.mov">IMG_2232.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452821113.mov">IMG_2233.MOV</a> (video/quicktime)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452821114.png">test ext2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/451543312/452821246.png">Screen Shot 2019-10-14 at 4.25.29 PM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

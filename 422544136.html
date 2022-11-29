@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS231 Project 1: Blackjack</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513827.html">Di Luo&#39;s CS231</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS231 Project 1: Blackjack
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Feb 19, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span style="text-decoration: underline;"><strong>Description</strong></span></p><p><span>In this project we are trying to apply the knowledge we learned about Java to simulate a simple version of the card game Blackjack, which is a comparing card game between players and dealers and they compete with each other. I implemented classes to represent a card, a hand, a deck, and the game Blackjack. By using ArrayList, which is the key concept we learned in the first a few classes that implies a flexible or dynamic array, and connecting each of the classes effectively, I successfully simulated the Blackjack game and got to know more about the property of the game.</span></p><p> </p><p><span style="text-decoration: underline;"><strong>Solution</strong></span></p><p><span>Firstly, I created a Card class stored in Card.java that holds all information unique to the card. Constructor will create a Card object with its value as a field that is indicated by the parameter. Accessor getValue() was also created to get the value of the card. A main function that prints the value of the card was created to test the reliability of the class and its functions. One more thing is that a range checker is created in the constructor in order to get right values for the card, which is shown below.</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="204" src="attachments/422544136/422708300.png" data-image-src="attachments/422544136/422708300.png" data-unresolved-comment-count="0" data-linked-resource-id="422708300" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-02-18 at 11.51.32 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="422544136" data-linked-resource-container-version="6"></span></p><p> </p><p><span>Secondly, I created a Hand class stored in Hand.java that holds a set of cards. ArrayList is used to represent the hand and cards are stored in the ArrayList. Different functions are also created, such as reset(), which reset the hand, and add(), which add a card to hand. A getTotalValue() function was created to get the total value of cards in hand, in which it will loop through the ArrayList and add the value of cards one by one as shown in the snippet below. Besides, a toString method was created to return a string telling the situation of the hand by telling the cards the hand has.</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="200" src="attachments/422544136/422708301.png" data-image-src="attachments/422544136/422708301.png" data-unresolved-comment-count="0" data-linked-resource-id="422708301" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-02-18 at 11.57.49 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="422544136" data-linked-resource-container-version="6"></span></p><p> </p><p><span>Thirdly, Deck class was created, which also uses ArrayList to hold a set of cards and is able to shuffle and deal the cards. 52 cards are added into the ArrayList for the game and some other functions are created to reset the deck or get cards from it. The shuffle() function uses Random class to shuffle the deck in order to use the deck for the next game. To achieve that a new ArrayList is created and the cards in old ArrayList are moved to random positions in the new one.</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/422544136/422708302.png" data-image-src="attachments/422544136/422708302.png" data-unresolved-comment-count="0" data-linked-resource-id="422708302" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-02-19 at 12.06.13 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="422544136" data-linked-resource-container-version="6"></span></p><p> </p><p><span>Fourthly, Blackjack class is created to implement the card game. Classes created before are used here to represent different part of the game. Deck class created a new deck, Hand class created two instances representing player and dealer respectively, and Card class is used by Deck class and Hand class. Functions for reseting and dealing are created. playerTurn() and dealerTurn() function are created to have player or dealer draw cards and to implement the rules that we are using, which is that </span>the player draw cards first until the total of the player's hand is equal to or above 16, and if the player doesn't go over 21, the dealer draw cards then until the total of the dealer's hand is equal to or above 17. A snippet below shows part of the playerTurn function. Different results return different boolean values from the two functions and the function gameResult will analyze the booleans and return -1, 0, or 1, respectively representing player loses, draw and player win. The function game() then prints out what player or dealer has beforehand and afterwards and the function toString will print out the final result of the game.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/422544136/422708303.png" data-image-src="attachments/422544136/422708303.png" data-unresolved-comment-count="0" data-linked-resource-id="422708303" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-02-19 at 12.18.01 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="422544136" data-linked-resource-container-version="6"></span></p><p>Then the main function of Blackjack class plays the game three times and the result is shown in mygames.txt.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/422544136/422708304.png" data-image-src="attachments/422544136/422708304.png" data-unresolved-comment-count="0" data-linked-resource-id="422708304" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-02-19 at 12.37.53 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="422544136" data-linked-resource-container-version="6"></span></p><p> </p><p>Furthermore, Simulation class was created to run 1000 times of simulation and the data was recorded in the way shown in the snippet below. By running few thousands of times, the results are close to each other and they shows that the average win rate of player is around 40%, that of dealer is around 50% and draw is around 10%, so I think 1000 times of simulation is sufficient enough since the results are concentrated.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/422544136/422708306.png" data-image-src="attachments/422544136/422708306.png" data-unresolved-comment-count="0" data-linked-resource-id="422708306" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-02-19 at 12.43.05 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="422544136" data-linked-resource-container-version="6"></span></p><p>Then I run the simulation of 1000 times for ten times and find that the dealer's win percentage is always higher than that of players. I changed the number to 800 times and still always higher, but sometimes the win percentage of dealer is very close to that of player. When I changed to 500 times, the opposite situation appear once in ten times. So my assumption is that <span style="color: rgb(34,51,68);">the number of games the simulation has to play in order for the dealer's win percentage always to be above the player's win percentage over ten runs of the simulation is around 800 times.</span></p><p><span style="color: rgb(34,51,68);"><br/></span></p><p><u><strong>Extension</strong></u></p><p>The first extension I did is the function <span style="color: rgb(34,51,68);">playerTurnInteractive() in Blackjack.java and the new class Interactive, which <span style="color: rgb(34,51,68);">uses input from the terminal to control the player's actions. In each step for player, he/she will get to know what he/she has in his/her hand and needs to decide whether to draw or stand. If the player wants to draw, input &quot;Y&quot; into the terminal; if the player wants to stand, input &quot;N&quot; into the terminal. There is also a range checker that if the input is neither Y or N, the game will report the mistake and start over again. This extension can be run in Interactive.java.</span></span></p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"> </span></span></p><p> </p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><br/></span></span></p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);">The second extension is</span></span> using 6 decks in one game, and reshuffle if only 1 deck is left. A function Deck6() is added to get a greater deck composed by 6 decks and shuffle it. I changed some small parts of Deck.java and Blackjack.java and after simulation that plays the game 1000 times I found that the change didn't influence the win percentage.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/422544136/423231499.png" data-image-src="attachments/422544136/423231499.png" data-unresolved-comment-count="0" data-linked-resource-id="423231499" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-02-19 at 2.32.14 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="422544136" data-linked-resource-container-version="6"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/422544136/423231502.png" data-image-src="attachments/422544136/423231502.png" data-unresolved-comment-count="0" data-linked-resource-id="423231502" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-02-19 at 2.55.52 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="422544136" data-linked-resource-container-version="6"></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/422544136/423231503.png" data-image-src="attachments/422544136/423231503.png" data-unresolved-comment-count="0" data-linked-resource-id="423231503" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2019-02-19 at 2.56.16 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="422544136" data-linked-resource-container-version="6"></span></p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"> </span></span></p><p> </p><p><span style="text-decoration: underline;"><strong>Reflection</strong></span></p><p><span style="color: rgb(34,51,68);">In this project I learned how to use CS to study the properties of a system defined by a set of rules. The simulation of the Blackjack game not only makes me clearer with the rules of the game, but also the result (the winning percentage) of it, which I didn't know before. By writing a lot of codes I become more familiar with Java language and grammar. I also become more comfortable with object-oriented structure, which I learned in Python but not quite familiar with it before. Besides, the extension helps me become more creative on setting the rule of a game.</span></p><p> </p><p><span style="text-decoration: underline;"><strong>Source</strong></span></p><p><span><a href="https://docs.oracle.com/javase/8/docs/api/" class="external-link" rel="nofollow">https://docs.oracle.com/javase/8/docs/api/<span> </span></a></span></p><p><span>Thanks to Yingqiao Wang.</span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/422708300.png">Screen Shot 2019-02-18 at 11.51.32 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/422708301.png">Screen Shot 2019-02-18 at 11.57.49 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/422708302.png">Screen Shot 2019-02-19 at 12.06.13 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/422708303.png">Screen Shot 2019-02-19 at 12.18.01 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/422708305.png">Screen Shot 2019-02-19 at 12.37.53 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/422708304.png">Screen Shot 2019-02-19 at 12.37.53 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/422708306.png">Screen Shot 2019-02-19 at 12.43.05 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/423231499.png">Screen Shot 2019-02-19 at 2.32.14 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/423231501.png">Screen Shot 2019-02-19 at 2.56.41 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/423231502.png">Screen Shot 2019-02-19 at 2.55.52 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/422544136/423231503.png">Screen Shot 2019-02-19 at 2.56.16 AM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS151 Project 4</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513786.html">Di Luo&#39;s CS151</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS151 Project 4
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Sep 30, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><u>Description:</u></strong></p><p>In Project 4, we need to <span style="color: rgb(34,51,68);">make a collection of images in the style of Andy Warhol <span style="color: rgb(34,51,68);">by manipulating the pixel colors of an image. In order to do so we need to</span> apply our knowledge in <span style="color: rgb(34,51,68);">John Zelle's graphics package and </span></span>make use of the knowledge we learned before, such as parameters, loops, and conditional statements. For this assignment I created two python programs, One is to generate a Warhol style collage and the other is to change the green screen to a different color. Both of the programs result to image files that can be viewed with the show program.</p><p> </p><div><u><strong>Task 1</strong></u><strong><u><br/></u></strong></div><div>First I created a function placeImage, which contains 4 parameters, to place a source image into a destination image. <span style="color: rgb(34,51,68);">The first argument is a destination Image, the second argument isrce Image, and the last two arguments are the (x, y) location to place the second Image into the first. The function is shown below.</span></div><div> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="400" src="attachments/414845287/414942214.png" data-image-src="attachments/414845287/414942214.png" data-unresolved-comment-count="0" data-linked-resource-id="414942214" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 6.55.26 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span></div><div><u><strong><br/></strong></u></div><div><div><u><strong>Task 2</strong></u></div><div>Then I c<span style="color: rgb(34,51,68);">reated three more functions besides swapRedBlue(), which are grayScale(), setBlueAs0(), darker(), </span><span style="color: rgb(34,51,68);">to edit the colors in a Image to achieve some effect. <span style="color: rgb(34,51,68);">swapRedBlue() exchanges the red channel of each pixel with the blue channel for a image; </span><span style="color: rgb(34,51,68);">grayScale() converts each pixel from color to an appropriate shade of gray; <span style="color: rgb(34,51,68);"> </span><span style="color: rgb(34,51,68);">setBlueAs0() </span>changes the blue channel of each pixel to 0; and <span style="color: rgb(34,51,68);">darker() changes the red, green, blue channels of each pixel by half to make the image darker.</span></span></span></div><div><div><u><strong><br/></strong></u></div><div><u><strong>Task 3</strong></u></div><div>Then I wrote my <span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);">main Warhol program in warhol.py, which read in one image: miller.ppm, created four copies of it using </span></span><span style="color: rgb(55,55,55);">clone()</span><span style="color: rgb(34,51,68);">, used my four filter functions to alter them, created a new blank image that is 2*width by 2*height and then used the placeImage function to insert my four edited images. Finally, it </span><span style="color: rgb(34,51,68);">wrote out the collage image and was saved to collage.ppm shown below:</span></div><div><div class="page" title="Page 5"><div class="section"><div class="layoutArea"><div class="column"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/414845287/414942184.png" data-image-src="attachments/414845287/414942184.png" data-unresolved-comment-count="0" data-linked-resource-id="414942184" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 4.13.31 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span>(Required picture 1)</p></div></div></div></div></div><div><div><u><strong><br/></strong></u></div><div><u><strong>Task 4</strong></u></div><div>Finally, I wrote <span style="color: rgb(34,51,68);">a python program bluescreen.py that read in my green-screen image and turned the background pixels to blue with t<span style="color: rgb(34,51,68);">he rest of the pixels remained untouched. <span style="color: rgb(34,51,68);">I used nested for loops to check each pixel in the image and test if it was very green. If so, the program changed its color to blue; If not, it remained its original color. In my test, <span style="color: rgb(34,51,68);">if the green channel is 2.3 times the red channel and also bigger than the blue channel, the pixel was categorized as &quot;very green&quot;. I put the name of the original as an argument and ran the program from command line.</span></span></span></span></div><div><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/414845287/414942211.png" data-image-src="attachments/414845287/414942211.png" data-unresolved-comment-count="0" data-linked-resource-id="414942211" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 5.21.57 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span></span></span></span></span></div><div><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/414845287/414942185.png" data-image-src="attachments/414845287/414942185.png" data-unresolved-comment-count="0" data-linked-resource-id="414942185" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 4.13.57 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span></strong></u>(Required picture 2)</div><div><u><strong><u><strong><br/></strong></u></strong></u></div><div><u><strong><u><strong>Extensions</strong></u></strong></u></div><div>For extensions, firstly, I created the filter grayScale(), which can convert each pixel from color to an appropriate shade of gray and in the end create a black and white version of the original image.  Gray pixels were created by &quot;setting its red, green, and blue components to have the same brightness.&quot;  I used a weighted average of the original rgb values to determine the brightness of the gray. The data of the weight was gained from a website.</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="150" src="attachments/414845287/414942222.png" data-image-src="attachments/414845287/414942222.png" data-unresolved-comment-count="0" data-linked-resource-id="414942222" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 7.49.27 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span></div><div>Secondly, I wrote a program to place myself in a scene in bluescreen.py. The background scene was the same size image as my green-screen image. The function placeImageWithoutBlue copied only non-blue pixels (if g &lt; 2.3*r) from my images into the background. Then I ran the program from command line with the two arguments.</div><div><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/414845287/414942210.png" data-image-src="attachments/414845287/414942210.png" data-unresolved-comment-count="0" data-linked-resource-id="414942210" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 5.21.38 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span></div><div><u><strong><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/414845287/414942181.png" data-image-src="attachments/414845287/414942181.png" data-unresolved-comment-count="0" data-linked-resource-id="414942181" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 4.14.33 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span></strong></u></strong></u></div><div><u><strong><u><strong><br/></strong></u></strong></u></div><div>Thirdly, I created a more complex Warhol style collage in warhol.py. </div><div><u><strong><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/414845287/414942182.png" data-image-src="attachments/414845287/414942182.png" data-unresolved-comment-count="0" data-linked-resource-id="414942182" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 4.14.06 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span></strong></u></strong></u></div><div><u><strong><u><strong><br/></strong></u></strong></u></div><div>Finally, I enabled my Warhol program to read in multiple images from the command line and made a collage that integrates several images.</div><div><u><strong><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/414845287/414942212.png" data-image-src="attachments/414845287/414942212.png" data-unresolved-comment-count="0" data-linked-resource-id="414942212" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 5.22.06 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span></strong></u></strong></u></div><div><u><strong><u><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/414845287/414942183.png" data-image-src="attachments/414845287/414942183.png" data-unresolved-comment-count="0" data-linked-resource-id="414942183" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-30 at 4.14.18 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="414845287" data-linked-resource-container-version="6"></span></strong></u></strong></u></div><div><u><strong><u><strong><br/></strong></u></strong></u></div><div><u><strong><u><strong><u><strong>Reflection</strong></u></strong></u></strong></u></div><div>In this project, I reviewed the knowledge I learned in class and lab, such as <span style="color: rgb(34,51,68);">Zelle graphics package,</span> parameters, loops, and conditional statements. I learned how to generate a Warhol style collage, how to place a source image or many source images on a destination image, how to control the color of every pixel of an image by using nested for loops, how to enable Warhol program to read in many images from the command line and made a collage, how to create a filter to generally change an image, and how to put a number of pixels that fulfill the requirements into another image instead of using the whole image.</div><div><u><strong><u><strong><u><strong><br/></strong></u></strong></u></strong></u></div><div><u><strong><u><strong><u><strong><u><strong>Source</strong></u></strong></u></strong></u></strong></u></div><div><p>Python 3: Converting image to grayscale (<a href="https://stackoverflow.com/questions/3815261/python-3-converting-image-to-grayscale?rq=1" class="external-link" rel="nofollow">https://stackoverflow.com/questions/3815261/python-3-converting-image-to-grayscale?rq=1</a>)</p></div><u><strong><br/></strong></u></div><u><strong><br/></strong></u></div><u><strong><br/></strong></u></div><p><strong><u><br/></u></strong></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942177.png">image2018-9-30 16:12:27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942178.ppm">collage.ppm</a> (application/x-upload-data)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942180.ppm">blueDi.ppm</a> (application/x-upload-data)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942181.png">Screen Shot 2018-09-30 at 4.14.33 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942182.png">Screen Shot 2018-09-30 at 4.14.06 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942183.png">Screen Shot 2018-09-30 at 4.14.18 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942184.png">Screen Shot 2018-09-30 at 4.13.31 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942185.png">Screen Shot 2018-09-30 at 4.13.57 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942216.png">Screen Shot 2018-09-30 at 5.21.38 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942217.png">Screen Shot 2018-09-30 at 5.21.57 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942218.png">Screen Shot 2018-09-30 at 5.22.06 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942214.png">Screen Shot 2018-09-30 at 6.55.26 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942210.png">Screen Shot 2018-09-30 at 5.21.38 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942211.png">Screen Shot 2018-09-30 at 5.21.57 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942212.png">Screen Shot 2018-09-30 at 5.22.06 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/414845287/414942222.png">Screen Shot 2018-09-30 at 7.49.27 PM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

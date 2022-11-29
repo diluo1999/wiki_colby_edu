@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di and Yixuan&#39;s CS333 Project 6 - JavaScript</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513807.html">Di Luo&#39;s CS333</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513801.html">Di Luo&#39;s Exploration in JavaScript</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di and Yixuan&#39;s CS333 Project 6 - JavaScript
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on May 16, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="DiandYixuan&#39;sCS333Project6JavaScript-FunctionsandFileI/OinJavaScript">Functions and File I/O in JavaScript</h3><h4 id="DiandYixuan&#39;sCS333Project6JavaScript-Task1:Wordcounter">Task 1: <span>Word counter</span></h4><p><span>I implemented word counter in JS with the help of the built-in Map that works like a dictionary in some languages. The word counter read the file, splits words with space, eliminates punctuations, switch all to lower case, and record the number of times that each word appears. In the main function, the map of the word counter is sorted and the top 20 is printed as follow.</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392620/488833067.png" data-image-src="attachments/485392620/488833067.png" data-unresolved-comment-count="0" data-linked-resource-id="488833067" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-16 0:19:24.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392620" data-linked-resource-container-version="5"></span></p><h4 id="DiandYixuan&#39;sCS333Project6JavaScript-Task2:FileI/O">Task 2: File I/O</h4><ul><li>How do you open, close, and read from a (text) file? Is there support for binary files?<br/>With Node.js, <span style="color: rgb(77,81,86);">an open source server environment, JS can open, close from a file and write to a file. The examples below shows the functionality. fs.open() opens the file. The parameter '+r' set the reader to read-only mode. fs.readFileSync() reads the file. fs.closeSync() closes the file.</span><br/><span style="color: rgb(77,81,86);"><span style=""><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="401" src="attachments/485392620/488833068.png" data-image-src="attachments/485392620/488833068.png" data-unresolved-comment-count="0" data-linked-resource-id="488833068" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-05-16 at 1.08.01 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392620" data-linked-resource-container-version="5"></span></span></span><br/><span style="color: rgb(77,81,86);"><span style=""><br/></span></span><br/><span style="color: rgb(77,81,86);"><span style="">JS can also write to a file.</span></span><br/><span style="color: rgb(77,81,86);"><span style=""><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="450" src="attachments/485392620/488833070.png" data-image-src="attachments/485392620/488833070.png" data-unresolved-comment-count="0" data-linked-resource-id="488833070" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-05-16 at 1.09.36 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392620" data-linked-resource-container-version="5"></span></span></span><br/><span style="color: rgb(77,81,86);"><span style=""><br/></span></span><span style="color: rgb(77,81,86);"><span style="">JS also accepts binary files by changing the parameter of readFileSync from 'utf-8' to 'binary'.</span></span><br/><span style="color: rgb(77,81,86);"><span style=""><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="401" src="attachments/485392620/488833071.png" data-image-src="attachments/485392620/488833071.png" data-unresolved-comment-count="0" data-linked-resource-id="488833071" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-05-16 at 1.13.13 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392620" data-linked-resource-container-version="5"></span></span></span><br/><span style="color: rgb(77,81,86);"><span style=""><br/></span></span></li></ul><ul><li>Does your language have built-in support for I/O, or is it part of a set of standard libraries?<br/>My research shows that JS doesn't have built-in support for I/O. The functionality can be achieved with Node.js<br/><br/></li><li>Does your language support opening web locations (URLs) as well as files on the local disk?<br/>JS support reading files from local disk as I shows before. For URLs, because JS is highly related to web pages, it can open web pages in URLs with external browsers or packages. For reading files from URLs, I didn't find if JS can read files from it directly, but it's achievable with some external packages, such as Node.js and <span>XMLHttpRequest.</span><br/><br/></li><li>Can the user input information into the program interactively?<br/>I created interactive() in task2.js, which reads from the command line and displays the input.<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/485392620/488833075.png" data-image-src="attachments/485392620/488833075.png" data-unresolved-comment-count="0" data-linked-resource-id="488833075" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-16 1:42:27.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392620" data-linked-resource-container-version="5"></span><br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392620/488833076.png" data-image-src="attachments/485392620/488833076.png" data-unresolved-comment-count="0" data-linked-resource-id="488833076" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-16 1:42:43.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392620" data-linked-resource-container-version="5"></span><br/><br/></li></ul><h4 id="DiandYixuan&#39;sCS333Project6JavaScript-Task3:Errorhandling">Task 3: E<span>rror handling</span></h4><p>JS has a built-in programming structure for error handling: try-catch blocks. JS's try-catch structure can also have a 'finally' block, which is always executed whether an exception has been caught. The <code class="w3-codespan">try</code> statement defines a block of code to be tested for errors while it is being executed and the <code class="w3-codespan">catch</code> statement defines a block of code to be executed if an error occurs in the try block. Below are some examples of error handling in JS.</p><p>The throw statement can be used to generate an exception, and the exception can be a string, a number, a boolean or an object. so I used it to create an unconditional try-catch block. The terminal output is &quot;I am the exception message.&quot;</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/485392620/488833058.png" data-image-src="attachments/485392620/488833058.png" data-unresolved-comment-count="0" data-linked-resource-id="488833058" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-15 23:44:11.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392620" data-linked-resource-container-version="5"></span></p><p> </p><p>Conditional try-catch block, which uses if/else to simulate the functionality of multiple catch statement, is also created. The try block gives a syntax error and checks what kind of error it is. The output is &quot;No idea what kind of error it is. Maybe Syntax?&quot;.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/485392620/488833059.png" data-image-src="attachments/485392620/488833059.png" data-unresolved-comment-count="0" data-linked-resource-id="488833059" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-15 23:47:42.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392620" data-linked-resource-container-version="5"></span></p><h4 id="DiandYixuan&#39;sCS333Project6JavaScript-Acknowledgment">Acknowledgment</h4><p><a href="https://www.w3schools.com/js/js_errors.asp" class="external-link" rel="nofollow">https://www.w3schools.com/js/js_errors.asp</a></p><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch" class="external-link" rel="nofollow">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch</a></p><p><a href="https://www.geeksforgeeks.org/map-in-javascript/" class="external-link" rel="nofollow">https://www.geeksforgeeks.org/map-in-javascript/</a></p><p><a href="https://stackoverflow.com/questions/6268679/best-way-to-get-the-key-of-a-key-value-javascript-object" class="external-link" rel="nofollow">https://stackoverflow.com/questions/6268679/best-way-to-get-the-key-of-a-key-value-javascript-object</a></p><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" class="external-link" rel="nofollow">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest</a></p><p><a href="https://flaviocopes.com/node-input-from-cli/" class="external-link" rel="nofollow">https://flaviocopes.com/node-input-from-cli/</a></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392620/488833058.png">image2020-5-15 23:44:11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392620/488833059.png">image2020-5-15 23:47:42.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392620/488833067.png">image2020-5-16 0:19:24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392620/488833068.png">Screen Shot 2020-05-16 at 1.08.01 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392620/488833069.png">Screen Shot 2020-05-16 at 1.08.55 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392620/488833070.png">Screen Shot 2020-05-16 at 1.09.36 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392620/488833071.png">Screen Shot 2020-05-16 at 1.13.13 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392620/488833075.png">image2020-5-16 1:42:27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392620/488833076.png">image2020-5-16 1:42:43.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS151 Project 9</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513786.html">Di Luo&#39;s CS151</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS151 Project 9
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Nov 14, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong><u>Description</u></strong></p><p>In project 9, I <span style="color: rgb(34,51,68);">continued to make shape classes but started making use of inheritance and creating a tree class. Inheritance can be used by <span style="color: rgb(34,51,68);">child classes so that they inherit the methods and fields of the base class. In our project, I created different shape classes, such as Square and Triangle, as the child classes of Shape class. I<span style="color: rgb(34,51,68);"> also modified the L-system class to enable it to use rules that include multiple possible replacement strings and choose them randomly in order to make each tree that I drew unique. Then I created different scenes and even mosaics with the classes.</span></span></span></p><p> </p><p><strong><u><strong><u>Solutions</u></strong></u></strong></p><p>First, I made a Tree shape class in tree.py as a child class of Shape class to draw trees, and modified the <span style="color: rgb(34,51,68);">L-system class to enable it to use rules that include multiple possible replacement strings</span>. Unlike other shape classes, Tree shape class's string is dynamically generated from an L-system so that the shapes of the trees can be different. The L-system object is stored in<span style="color: rgb(34,51,68);"> the lsystem field of the tree class and the number of iterations is stored in another field of tree class. By changing different part of the class and adding a test function, I drew three different trees in the image shown below.</span></p><p><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416812911/417497095.png" data-image-src="attachments/416812911/417497095.png" data-unresolved-comment-count="0" data-linked-resource-id="417497095" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-11-11 at 10.48.18 AM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span>(Required Image 1)</span></p><p><span style="color: rgb(34,51,68);">Next, I created other three child classes of Shape class, including Star, Rhombus and Trapezoid, in shapes.py. Each of them can be filled with a color. Then I wrote a test function to draw an image that incorporates all the shapes I created.</span></p><p><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="201" src="attachments/416812911/417497096.png" data-image-src="attachments/416812911/417497096.png" data-unresolved-comment-count="0" data-linked-resource-id="417497096" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-11-11 at 12.17.43 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span>(Required Image 2)</span></p><p><span style="color: rgb(34,51,68);">Then in home.py I created a new scene with the title &quot;My Home in China&quot; with the shape classes and the tree shape class that I wrote before.</span></p><p><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="400" src="attachments/416812911/417497097.png" data-image-src="attachments/416812911/417497097.png" data-unresolved-comment-count="0" data-linked-resource-id="417497097" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-11-11 at 1.56.51 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span>(Required Image 3</span><span style="color: rgb(34,51,68);">)</span></p><p><span style="color: rgb(34,51,68);">Finally I created the file mosaic.py to draw a mosaic. I wrote two functions, one is tile() for drawing <span style="color: rgb(34,51,68);">a set of shapes inside a square that is scale by scale in size with the lower left corner of the tile at location (x, y), and the other is mosaic() which <span style="color: rgb(34,51,68);">draws a 2D array of tiles Nx by Ny. Each tile in the mosaic is of size scale by scale, and the lower left corner of the mosaic is at (x, y). I incorporated four </span></span></span><span style="color: rgb(34,51,68);">trapezoids with different colors to create the square tile, and then created the 5 x 4 mosaic.</span></p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416812911/417497099.png" data-image-src="attachments/416812911/417497099.png" data-unresolved-comment-count="0" data-linked-resource-id="417497099" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-11-11 at 3.36.12 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span>(Required Image 4)</span></span></span></p><p><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><span style="color: rgb(34,51,68);"><br/></span></span></span></p><p><strong><u><strong><u><strong><u><strong>Extensions</strong></u></strong></u></strong></u></strong></p><p>For extension, firstly, I created a Ngon class to draw n-gon. The string for drawing in Ngon class is dynamic depending on the number of the sides that imported from the user.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416812911/417497102.png" data-image-src="attachments/416812911/417497102.png" data-unresolved-comment-count="0" data-linked-resource-id="417497102" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-11-11 at 8.18.42 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span></p><p>For the second extension, I wrote two new L-systems, rewrote drawString function in turtle_interpreter.py by adding more vocabularies, and drew three trees for each of the new L-systems in home.py. Each of the new trees is unique and on the tree there are a lot of leaves and berries.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/416812911/417497104.png" data-image-src="attachments/416812911/417497104.png" data-unresolved-comment-count="0" data-linked-resource-id="417497104" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-11-11 at 5.44.48 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span></p><p>For the third extension, I made two<span style="color: rgb(34,51,68);"> more tile functions and mixed them around with the original one in another mosaic function. One of the new tiles includes four rhombi with different colors and directions, and the other one includes a yellow star and a red pentagon inlaid in the middle of star. The red pentagon is created from Ngon class, which is another extension. A new 6 x 6 mosaic is created.</span></p><p><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416812911/417497105.png" data-image-src="attachments/416812911/417497105.png" data-unresolved-comment-count="0" data-linked-resource-id="417497105" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-11-11 at 4.42.13 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span></span></p><p><span style="color: rgb(34,51,68);">For the fourth extension, I made a hexagon tile, which is combined by six triangles with different colors, and created a function that can draw mosaics incorporated by hexagon tiles. In order to create the mosaic, a more complex double for loops was created and the loop would be different depending on Nx is odd or even.</span></p><p><span style="color: rgb(34,51,68);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416812911/417497928.png" data-image-src="attachments/416812911/417497928.png" data-unresolved-comment-count="0" data-linked-resource-id="417497928" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-11-13 at 11.47.13 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416812911/417497106.png" data-image-src="attachments/416812911/417497106.png" data-unresolved-comment-count="0" data-linked-resource-id="417497106" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-11-11 at 5.18.36 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span></p><p>For the fifth extension, I made an animation of my tiles.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/416812911/417497944.gif" data-image-src="attachments/416812911/417497944.gif" data-unresolved-comment-count="0" data-linked-resource-id="417497944" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="animation.gif" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/gif" data-linked-resource-container-id="416812911" data-linked-resource-container-version="9"></span></p><p><span style="color: rgb(34,51,68);"> </span></p><p><strong><u><strong><u><strong><u><strong><strong><u><strong>Reflection</strong></u></strong></strong></u></strong></u></strong></u></strong></p><p>In project 9, I reviewed the knowledge in turtle, L-system and classes that we learned in class. I modified lsystem.py so that now I can <span style="color: rgb(34,51,68);">use rules that include multiple possible replacement strings and choose them randomly in order to make unique L-system trees, which is closer to the real world</span>. I learned how to use inheritance between classes to create different child shape classes. In the project only shape classes are used to draw shapes without using any turtle codes directly.</p><p><strong><u><strong><u><strong><u><strong><strong><u><strong><br/></strong></u></strong></strong></u></strong></u></strong></u></strong></p><p><strong><u><strong><u><strong><u><strong><strong><u><strong><u><strong>Source</strong></u></strong></u></strong></strong></u></strong></u></strong></u></strong></p><p><a href="http://interactivepython.org/runestone/static/StudentCSP/CSPTurtleDecisions/oddEven.html" class="external-link" rel="nofollow">http://interactivepython.org/runestone/static/StudentCSP/CSPTurtleDecisions/oddEven.html</a></p><p><a href="http://gifmaker.me" class="external-link" rel="nofollow">http://gifmaker.me</a></p><p> </p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497095.png">Screen Shot 2018-11-11 at 10.48.18 AM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497096.png">Screen Shot 2018-11-11 at 12.17.43 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497097.png">Screen Shot 2018-11-11 at 1.56.51 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497099.png">Screen Shot 2018-11-11 at 3.36.12 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497102.png">Screen Shot 2018-11-11 at 8.18.42 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497104.png">Screen Shot 2018-11-11 at 5.44.48 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497105.png">Screen Shot 2018-11-11 at 4.42.13 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497106.png">Screen Shot 2018-11-11 at 5.18.36 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497928.png">Screen Shot 2018-11-13 at 11.47.13 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/416812911/417497944.gif">animation.gif</a> (image/gif)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

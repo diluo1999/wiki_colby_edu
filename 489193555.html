@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di and Yixuan&#39;s CS333 Project 8 - JavaScript</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513807.html">Di Luo&#39;s CS333</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513801.html">Di Luo&#39;s Exploration in JavaScript</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di and Yixuan&#39;s CS333 Project 8 - JavaScript
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on May 21, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="DiandYixuan&#39;sCS333Project8JavaScript-ParallelProgramminginJavaScript">Parallel Programming in JavaScript</h3><h4 id="DiandYixuan&#39;sCS333Project8JavaScript-Task1:DiscussiononhowparallelismissupportedinJS">Task 1: Discussion on how parallelism is supported in JS</h4><p>JavaScript was considered as a single-threaded programming language that ran in a browser and does not support multi-threading so that only one set of instructions is executed at any time in the same process. For instance, Google Chrome will not let a single web page’s JavaScript run concurrently because this might cause massive concurrency issues in existing web pages. All Chrome does is separate multiple components (different tabs, plug-ins, etcetera) into separate processes, but there is not a page with more than one JavaScript thread. In addition, single-threaded makes things easier for implementation and for developers using the language. JavaScript was initially a language only useful for adding some interaction to webpages, form validations, and so on — nothing that required the complexity of multithreading.</p><p> </p><p>As CS is developing, JS starts to support muilti-threading. Some libraries of JavaScript enable JS to have parallelism, such as Parallel.js, which is <span style="color: rgb(85,85,85);">a tiny library for multi-core processing in Javascript. It was created to take full advantage of web-workers API.</span></p><p> </p><p>Acknowledgment:</p><p><a href="https://stackoverflow.com/questions/39879/why-doesnt-javascript-support-multithreading" class="external-link" rel="nofollow">https://stackoverflow.com/questions/39879/why-doesnt-javascript-support-multithreading</a></p><p><a href="https://blog.logrocket.com/node-js-multithreading-what-are-worker-threads-and-why-do-they-matter-48ab102f8b10/" class="external-link" rel="nofollow">https://blog.logrocket.com/node-js-multithreading-what-are-worker-threads-and-why-do-they-matter-48ab102f8b10/</a></p><div><a href="https://parallel.js.org" class="external-link" rel="nofollow">https://parallel.js.org</a></div><h4 id="DiandYixuan&#39;sCS333Project8JavaScript-Task2:ParallelisminPython–Writeafunctionthatsortsanarraywithparallelism">Task 2: Parallelism in Python – <span>Write a function that sorts an array with parallelism</span></h4><p>In order to create each thread, we extended threading.Thread class with our sortThread class. The run method in the sortThread class is the method that will be run in parallel threads. In this method, we used the built-in sort method in Python to sort partial array specified by the indices.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/489193555/489160739.png" data-image-src="attachments/489193555/489160739.png" data-unresolved-comment-count="0" data-linked-resource-id="489160739" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-21 11:25:51.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="489193555" data-linked-resource-container-version="6"></span></p><p> </p><p>To make the thread working in parallel, we first create objects of the thread class. And then we call start() and join() method of thread class to make them work</p><p>For threading, with each number of threads, we created the same number of objects in sortThread class. Then we used start() and join() method of thread class to achieve multi-threading.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="350" src="attachments/489193555/489160741.png" data-image-src="attachments/489193555/489160741.png" data-unresolved-comment-count="0" data-linked-resource-id="489160741" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-21 11:28:5.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="489193555" data-linked-resource-container-version="6"></span></p><p> </p><p>Then I tested with different array size. First is array size 1000, in which the result below shows no improvements by using more threads.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="400" src="attachments/489193555/489160743.png" data-image-src="attachments/489193555/489160743.png" data-unresolved-comment-count="0" data-linked-resource-id="489160743" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-21 11:32:41.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="489193555" data-linked-resource-container-version="6"></span></p><p> </p><p>The result below is for array size 100000, which shows that multi-threading does improve the performance. 2-thread uses 20% time of 1-thread. 4-thread uses 30% time of 2-thread.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="400" src="attachments/489193555/489160742.png" data-image-src="attachments/489193555/489160742.png" data-unresolved-comment-count="0" data-linked-resource-id="489160742" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-21 11:28:30.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="489193555" data-linked-resource-container-version="6"></span></p><p> </p><p>For image multithreading, since the original file offered pyppmIO.py has some bugs, I was not able to use it. The program is implemented in task2_2.py. Screenshots are attached.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/489193555/489160745.png" data-image-src="attachments/489193555/489160745.png" data-unresolved-comment-count="0" data-linked-resource-id="489160745" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-21 12:50:26.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="489193555" data-linked-resource-container-version="6"></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/489193555/489160746.png" data-image-src="attachments/489193555/489160746.png" data-unresolved-comment-count="0" data-linked-resource-id="489160746" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-21 12:50:37.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="489193555" data-linked-resource-container-version="6"></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/489193555/489160744.png" data-image-src="attachments/489193555/489160744.png" data-unresolved-comment-count="0" data-linked-resource-id="489160744" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-05-21 at 12.22.33 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="489193555" data-linked-resource-container-version="6"></span></p><p><span><br/></span></p><p><span><br/></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/489193555/489160739.png">image2020-5-21 11:25:51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/489193555/489160740.png">image2020-5-21 11:27:55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/489193555/489160741.png">image2020-5-21 11:28:5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/489193555/489160742.png">image2020-5-21 11:28:30.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/489193555/489160743.png">image2020-5-21 11:32:41.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/489193555/489160744.png">Screen Shot 2020-05-21 at 12.22.33 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/489193555/489160745.png">image2020-5-21 12:50:26.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/489193555/489160746.png">image2020-5-21 12:50:37.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

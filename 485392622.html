@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di and Yixuan&#39;s CS333 Project 7 - JavaScript</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513807.html">Di Luo&#39;s CS333</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513801.html">Di Luo&#39;s Exploration in JavaScript</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di and Yixuan&#39;s CS333 Project 7 - JavaScript
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on May 20, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="DiandYixuan&#39;sCS333Project7JavaScript-MemoryManagementinJavaScript">Memory Management in JavaScript</h3><h4 id="DiandYixuan&#39;sCS333Project7JavaScript-1.ResearchonmemorymanagementalgorithmsinJavaScript">1.Research on memory management algorithms in JavaScript</h4><p>JavaScript has automatic memory management, meaning that m<span style="color: rgb(0,0,0);">emory allocation happens automatically when a variable is created, and deallocation happens when no pointer connects with the variables.</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/485392622/489160730.png" data-image-src="attachments/485392622/489160730.png" data-unresolved-comment-count="0" data-linked-resource-id="489160730" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-05-20 at 4.25.59 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392622" data-linked-resource-container-version="3"></span></p><p> </p><p>In the case below, object { <span style="color: rgb(156,220,254);">name</span><span style="color: rgb(156,220,254);">:</span> <span style="color: rgb(206,145,120);">'David'</span>, <span style="color: rgb(156,220,254);">age</span><span style="color: rgb(156,220,254);">:</span> <span style="color: rgb(181,206,168);">21</span> } is connected with two variable names obj and another obj. When obj is reassigned and disconnects with the object, anotherobj still has the connection, so anotherobj.name can get 'David'. After anotherobj is reassigned, no pointer connects with object { <span style="color: rgb(156,220,254);">name</span><span style="color: rgb(156,220,254);">:</span> <span style="color: rgb(206,145,120);">'David'</span>, <span style="color: rgb(156,220,254);">age</span><span style="color: rgb(156,220,254);">:</span> <span style="color: rgb(181,206,168);">21</span> } so the memory it takes is deallocated.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/485392622/489160731.png" data-image-src="attachments/485392622/489160731.png" data-unresolved-comment-count="0" data-linked-resource-id="489160731" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-05-20 at 4.30.45 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392622" data-linked-resource-container-version="3"></span></p><p> </p><p>Next is the investigation in the interlinked objects. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/485392622/489160732.png" data-image-src="attachments/485392622/489160732.png" data-unresolved-comment-count="0" data-linked-resource-id="489160732" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-05-20 at 4.32.07 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392622" data-linked-resource-container-version="3"></span></p><p>link() takes in two objects and creates a field friend for each of them that connects with the other object, then it creates an object containing both objects.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/485392622/489160733.png" data-image-src="attachments/485392622/489160733.png" data-unresolved-comment-count="0" data-linked-resource-id="489160733" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-05-20 at 4.34.15 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392622" data-linked-resource-container-version="3"></span></p><p>The new big object is referenced by variable 'all'. The delete keyword deletes the binding between object all and object {<span style="color: rgb(156,220,254);">id</span><span style="color: rgb(156,220,254);">:</span> <span style="color: rgb(206,145,120);">'first'</span>}. But the object is still accessible because the object is referenced by {<span style="color: rgb(156,220,254);">id</span><span style="color: rgb(156,220,254);">:</span> <span style="color: rgb(206,145,120);">'second'</span>}.friend. Then the second delete deletes the second connection so no pointer connects to object {<span style="color: rgb(156,220,254);">id</span><span style="color: rgb(156,220,254);">:</span> <span style="color: rgb(206,145,120);">'first'</span>} so that memory will be deallocated. The last statement deletes the interlinked object all, frees the memory.</p><h4 id="DiandYixuan&#39;sCS333Project7JavaScript-2.Investigationonautomaticmemorymanagement/garbagecollectioninJS">2.Investigation on automatic memory management/garbage collection in JS</h4><p>In task2.js, in order to find when a garbage sweep takes place, I undertook an experiment with two functions allocateAndFree() and detection(). In allocateAndFree() I creates and deletes lots of memory for 1000 times. In detection(), I call allocateAndFree() 10 times, time each call, and find the call that takes much longer time (in my case, 10 times more than the previous one).</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/485392622/489160734.png" data-image-src="attachments/485392622/489160734.png" data-unresolved-comment-count="0" data-linked-resource-id="489160734" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-05-20 at 5.52.03 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392622" data-linked-resource-container-version="3"></span></p><p>The result is below. As I tested many times, the 7th function call usually takes a longer time than others, which means that garbage collection happens during the call.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/485392622/489160735.png" data-image-src="attachments/485392622/489160735.png" data-unresolved-comment-count="0" data-linked-resource-id="489160735" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2020-5-20 17:52:30.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392622" data-linked-resource-container-version="3"></span></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392622/489160729.png">Screen Shot 2020-05-20 at 4.25.28 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392622/489160730.png">Screen Shot 2020-05-20 at 4.25.59 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392622/489160731.png">Screen Shot 2020-05-20 at 4.30.45 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392622/489160732.png">Screen Shot 2020-05-20 at 4.32.07 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392622/489160733.png">Screen Shot 2020-05-20 at 4.34.15 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392622/489160734.png">Screen Shot 2020-05-20 at 5.52.03 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392622/489160735.png">image2020-5-20 17:52:30.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di and Yixuan&#39;s CS333 Project 5 - JavaScript</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513807.html">Di Luo&#39;s CS333</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513801.html">Di Luo&#39;s Exploration in JavaScript</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di and Yixuan&#39;s CS333 Project 5 - JavaScript
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Apr 27, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="DiandYixuan&#39;sCS333Project5JavaScript-PolymorphisminJavaScript:GenericLinkedList">Polymorphism in JavaScript: Generic Linked List</h2><p>JavaScript is a dynamically typed language, which means that variables declared can hold any type of data. Therefore, generic linked list in JS can be implemented without additional functionalities (such as &lt;&gt; for generic in Java). The advantage of dynamically typed language is that it makes the implementation of generic linked list or other generics more convenient since there is no need to specify the type in the code. The drawback is that without explicitly limit the data type, the coder need to remember which data type the codes are for; if not, errors will appear when data in the wrong type is the input. </p><p>In this project, two classes are created to support the linked list: Node and LinkedList, in which Node class stores each data and the next point and LinkedList class stores head, size, and methods of linked list.</p><p>Below are the implementation of Node and LinkedList class:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392618/485622011.png" data-image-src="attachments/485392618/485622011.png" data-unresolved-comment-count="0" data-linked-resource-id="485622011" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-04-27 at 9.43.58 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392618" data-linked-resource-container-version="3"></span></p><p> </p><p>Next are some methods of LinkedList class. push() adds a node to the front of the list and stores the given data in the node. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392618/485622013.png" data-image-src="attachments/485392618/485622013.png" data-unresolved-comment-count="0" data-linked-resource-id="485622013" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-04-27 at 9.51.09 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392618" data-linked-resource-container-version="3"></span></p><p> </p><p>pop() removes the node at the front of the list and returns the associated data. After popping the head would point to the popped node's next, which sustains the link.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392618/485622025.png" data-image-src="attachments/485392618/485622025.png" data-unresolved-comment-count="0" data-linked-resource-id="485622025" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-04-27 at 9.51.28 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392618" data-linked-resource-container-version="3"></span> </p><p> </p><p>append() adds a node to the end of the list, storing the given data in the node. The parameter data is the input data and can be any type. A while loop is used to traverse the linked list to the end and append the new node there.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392618/485622026.png" data-image-src="attachments/485392618/485622026.png" data-unresolved-comment-count="0" data-linked-resource-id="485622026" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-04-27 at 9.51.33 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392618" data-linked-resource-container-version="3"></span></p><p> </p><p>remove() removes the first node in the list whose data matches target given the comparison function. variable current and previous are used to indicate the node that the method is working on at the moment and the previous node respectively. Then a while loop is used to traverse the linked list the compare the parameter target with each of the data by using the comparator function in compfunc. After removing, previous' node's next is connected to current node's next. If no one matches, null is returned.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392618/485622027.png" data-image-src="attachments/485392618/485622027.png" data-unresolved-comment-count="0" data-linked-resource-id="485622027" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-04-27 at 9.51.40 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392618" data-linked-resource-container-version="3"></span></p><p> </p><p>map() traverses the list with a while loop and applies the given function to the data at each node.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392618/485622035.png" data-image-src="attachments/485392618/485622035.png" data-unresolved-comment-count="0" data-linked-resource-id="485622035" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-04-27 at 10.02.33 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392618" data-linked-resource-container-version="3"></span></p><p> </p><p>To check the correctness of each method with testing functions in another file lltest.js, the code below are used respectively in llist.js and lltest.js to export the LinkedList and Node class to the testing file.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392618/485622030.png" data-image-src="attachments/485392618/485622030.png" data-unresolved-comment-count="0" data-linked-resource-id="485622030" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-04-27 at 9.52.19 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392618" data-linked-resource-container-version="3"></span> in llist.js</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392618/485622031.png" data-image-src="attachments/485392618/485622031.png" data-unresolved-comment-count="0" data-linked-resource-id="485622031" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-04-27 at 9.52.29 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392618" data-linked-resource-container-version="3"></span> in lltest.js</p><p> </p><p>Then two testing functions testInteger() and testString() test the LinkedList class with two different data type (integer and string). The output are shown in README.txt, which proves the correctness.</p><p> </p><h4 id="DiandYixuan&#39;sCS333Project5JavaScript-Extension:Deletemethod">Extension: Delete method</h4><p>Delete() deletes the node indicated by the index and return the data. It inherits most of remove() but traverse the linked list with a for loop instead of a while loop. After deleting the node indicated by the index, the connection is restored by connecting previous node's next to deleted one's next. The testing codes for delete() are added to the end of testing functions for the main code.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/485392618/485622029.png" data-image-src="attachments/485392618/485622029.png" data-unresolved-comment-count="0" data-linked-resource-id="485622029" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-04-27 at 9.52.09 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="485392618" data-linked-resource-container-version="3"></span></p><p> </p><h4 id="DiandYixuan&#39;sCS333Project5JavaScript-Acknowledgment">Acknowledgment</h4><p><a href="https://www.geeksforgeeks.org/javascript-tostring-function/" class="external-link" rel="nofollow">https://www.geeksforgeeks.org/javascript-tostring-function/</a></p><p><a href="https://javascript.info/comparison#string-comparison" class="external-link" rel="nofollow">https://javascript.info/comparison#string-comparison</a></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622011.png">Screen Shot 2020-04-27 at 9.43.58 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622013.png">Screen Shot 2020-04-27 at 9.51.09 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622025.png">Screen Shot 2020-04-27 at 9.51.28 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622026.png">Screen Shot 2020-04-27 at 9.51.33 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622027.png">Screen Shot 2020-04-27 at 9.51.40 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622028.png">Screen Shot 2020-04-27 at 9.51.57 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622029.png">Screen Shot 2020-04-27 at 9.52.09 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622030.png">Screen Shot 2020-04-27 at 9.52.19 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622031.png">Screen Shot 2020-04-27 at 9.52.29 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/485392618/485622035.png">Screen Shot 2020-04-27 at 10.02.33 PM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

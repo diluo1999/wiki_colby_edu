@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo&#39;s CS151 Project 2</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513786.html">Di Luo&#39;s CS151</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo&#39;s CS151 Project 2
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Sep 18, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p> </p><ol><li><strong>Summary</strong></li></ol><p>The purpose of Project 2 is to create two different scenes of desert by using different basic shapes and more complex shapes by combining those simple shapes in Python. In order to do that, we need to create different functions and function parameters to get the shapes that we want, put the shapes with different scales on different positions, and make the function more complex step by step to enrich the scenes of desert.</p><p> </p><p><strong>   </strong>  2.<strong>  My Solution </strong></p><p>Firstly I created two functions to draw two basic shapes: block(), which draws a block, and triangle(), which draws a triangle. Both of the shapes are adjustable. For block() it has four parameters, x, y, width, and height, so that it can be drawn at a given position (x, y) with a given width and a given height. For triangle() it has three parameters, x, y, sideLength, so that it can be draw at a give position (x, y) with a give side length.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/413632219/414122409.png" data-image-src="attachments/413632219/414122409.png" data-unresolved-comment-count="0" data-linked-resource-id="414122409" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-18 at 7.51.25 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413632219" data-linked-resource-container-version="5"></span>(required picture 1)</p><p> </p><p>Then I created two more complex functions to draw two shapes for decorating my desert scene by using the basic functions created before. One is to create a cactus combined by five blocks and the other is a stone combined by two triangles. Both of the cactus and the stone can be draw at a given location (x, y) and the scale of the cactus can also be changed. </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="300" src="attachments/413632219/414122411.png" data-image-src="attachments/413632219/414122411.png" data-unresolved-comment-count="0" data-linked-resource-id="414122411" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-18 at 8.00.25 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413632219" data-linked-resource-container-version="5"></span>(required picture 2)</p><p> </p><p>Then I started to create the scene of the desert. For the first one, desert1(), I decided to create a scene of desert in the morning. The ground, which is a big block with brown color, is added. I added colors for the cacti and the stones. More shapes were created, including the grasses and the sun. For loop and random parameter are used to create more complex shapes.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/413632219/414122415.png" data-image-src="attachments/413632219/414122415.png" data-unresolved-comment-count="0" data-linked-resource-id="414122415" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-18 at 8.21.39 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413632219" data-linked-resource-container-version="5"></span>(required picture 3)</p><p> </p><p>Then I started to create desert2(), I decided to create a scene of desert in the evening. The ground is still orange but the black sky is added. There are still green cacti, brown stones, green grasses but because I used random.randint() for the position and I changed the parameters of positions and numbers of loops so that cacti became more and the positions of shapes are different from the ones in desert1(). Besides, yellow stars with random positions and scales are added in the sky and I also added a yellow moon which is combined by a block and two <span style="color: rgb(49,49,49);">rhombuses.</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/413632219/414122417.png" data-image-src="attachments/413632219/414122417.png" data-unresolved-comment-count="0" data-linked-resource-id="414122417" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2018-09-18 at 8.45.03 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="413632219" data-linked-resource-container-version="5"></span>(required picture 4)</p><p><strong>   </strong>  3.<strong>  Extension </strong></p><p>For extension, I made more shapes, including the grasses, the ground, the sky, the stars, the sun and the moon, to enrich the scenes of the desert. Besides, randomness are used by applying random parameters to create shapes that have the same shape but different scales, and to put shapes into an area of the scene on random positions to enrich the area combining with for loop. Furthermore, for loop was used to create complex shapes, such as the grass. Moreover, I also made<span style="color: rgb(34,51,68);"> use of other turtle properties, such as the color of the shape and the color of the outline, to make the shapes and the scenes look better. </span></p><p><strong><br/></strong></p><p><strong>   </strong>  4.<strong>  What I learned</strong></p><p>After finishing the project, I learned how to give colors to the shape and the outline of the shape, how to use random parameter to put lots of shapes on random positions to enrich the scene, and how to create complex shapes with basic shapes and put them on the different positions of the scene by conducting geometric thinking. I also learned how to use For loop to create complex shapes with simplified function.</p><p> </p><p><strong>   </strong>  5.<strong>  The help I received from </strong></p><div>Thanks for the help of Brit (TA)! </div><p>Credits to the website: Color Names, running, all screens: <a href="https://wiki.tcl.tk/37701" class="external-link" rel="nofollow">https://wiki.tcl.tk/37701</a></p><p> </p><p> </p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413632219/414122409.png">Screen Shot 2018-09-18 at 7.51.25 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413632219/414122420.png">Screen Shot 2018-09-18 at 8.00.25 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413632219/414122415.png">Screen Shot 2018-09-18 at 8.21.39 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413632219/414122417.png">Screen Shot 2018-09-18 at 8.45.03 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/413632219/414122411.png">Screen Shot 2018-09-18 at 8.00.25 PM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

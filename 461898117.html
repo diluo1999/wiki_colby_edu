@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di Luo and Yixuan Qiu&#39;s CS232 Project 9</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513832.html">Di Luo&#39;s CS232</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di Luo and Yixuan Qiu&#39;s CS232 Project 9
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Dec 09, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><u><strong>Description</strong></u></p><p>In the final project, we implemented the video game Tic-tac-toe, which was visualized by the VGA monitor and controlled by Altera DE1 board. The basic rule of the game is presented as follows: the game is for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. (Wikipedia) For more detailed game information, please check the link attached in <u><strong>Acknowledgement</strong></u>. Three VHDL files were created to support the functionality of the game: VGAdrive, which is the driver for VGA monitor displaying the game; tic, which contains the logic and the state machine of the gameplay; and display, which is the top-level design that incorporates both tic and VGAdrive.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" draggable="false" width="300" src="attachments/461898117/462061815.png" data-image-src="attachments/461898117/462061815.png" data-unresolved-comment-count="0" data-linked-resource-id="462061815" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="400px-Tic_tac_toe.svg.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="461898117" data-linked-resource-container-version="9"></span>(Wikipedia)</p><p> </p><p><strong><u>Circuit Design</u></strong></p><p>By testing the VGAdrive with the vgatest code offered in the link, which displayed three squares with different colors overlaying on each other, the correct functionality of the VGAdrive was proved.</p><p>Regarding the game design in tic.vhd, the inputs are a 9-bit std_logic_vector which receives from 9 switches on the board showing which position was marked during the game play; clock; reset; a std_logic bit start initiating the game in sStart state; and drop, a std_logic bit which goes high when the player marks a position on the grid. The outputs are 2 std_logic bits controlling the 2 LEDs that shows the final status of the game: one of the players win or tie; two 9-bit vectors out1 and out2, each of which represents the positions marked by the player: the bits in 0 mean the player didn't mark these positions and the bits in 1 mean the player marked these positions. More internal signals, such as the std_logic bits that representing each of the bits in out1 or out2, 4-bit unsigned number count that calculates which player's turn currently, were created. The description of the state machine is shown below. reset button would reset all internal values to 0s and goes to sStart.</p><p>sStart: wait for the first player to press start button to initialize the game. Goes to sPick.</p><p>sPick: the player pushes one of the switches and press drop button to mark the position. If the count is odd, it's the first player's turn, otherwise it's in the second player's turn. The count is incremented by 1 at the end. Goes to sWait.</p><p>sWait: wait for the player to release the drop button and incorporate each bit representing the marking status at each position into the 9-bit temporary value out1_temp and out2_temp. Goes to sCheck</p><p>sCheck: if count is smaller than 9, meaning that there is still at least one empty space on the grid, the circuit checks if any of the players has won. If the first player wins, goes to sP1_win; if the second player wins, goes to sP2_win; otherwise goes to sChange and the game continues. If count equals to one, check if any player wins. If so, goes to each of the winner state, otherwise goes to sTie.</p><p>sChange: goes to sPick. </p><p>sP1_win: output value p1win sets to 1, lighting the red LED.</p><p>sP2_win: output value p2win sets to 1, lighting the green LED.</p><p>sTie: output values p1win and p2win set to 1, lighting both LEDs showing that the tie status.</p><p>The state machine diagram is shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/461898117/462061819.jpg" data-image-src="attachments/461898117/462061819.jpg" data-unresolved-comment-count="0" data-linked-resource-id="462061819" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_2371.jpg" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="461898117" data-linked-resource-container-version="9"></span></p><p>In the top-level design file display.vhd, inputs are from the DE1 board including reset, start, drop (each represented by a push button), sw (9 bit input from switches), and outputs are LED signals from tic.vhd and RGB signals, horizontal sync and vertical sync signals from VGAdrive.vhd. display incorporates VGAdrive and tic and draws color in each of the positions when the players mark the positions. To draw, the circuit checks the two 9-bit vectors from tic to see the status on each position: for example, if the least significant bit is 1 in out1 and 0 in out2, then the bottom right position on the screen would be red; if both are 0s, the position would be black.</p><p> </p><p><strong><u>Gameplay</u></strong></p><p>The board assignments are shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="800" src="attachments/461898117/462061820.jpg" data-image-src="attachments/461898117/462061820.jpg" data-unresolved-comment-count="0" data-linked-resource-id="462061820" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="IMG_2166.jpg" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="461898117" data-linked-resource-container-version="9"></span></p><p> </p><p>The game screen assignments are shown below.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/461898117/462061830.jpg" data-image-src="attachments/461898117/462061830.jpg" data-unresolved-comment-count="0" data-linked-resource-id="462061830" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2611575944288_.pic_hd.jpg" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="461898117" data-linked-resource-container-version="9"></span></p><p> </p><p>The gameplay video is shown below.</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/461898117/1575943820194831.mp4" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+(Green/second player wins)</p><p><div class="embeddedObject" >
+    <video src="/download/attachments/461898117/1575943753751038.mp4" height="380" width="480"  controls>
+        Your browser does not support the HTML5 video element
+</video>
+
+</div>
+(Red/first player wins)</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="301" src="attachments/461898117/462061828.jpg" data-image-src="attachments/461898117/462061828.jpg" data-unresolved-comment-count="0" data-linked-resource-id="462061828" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="2551575942953_.pic.jpg" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/jpeg" data-linked-resource-container-id="461898117" data-linked-resource-container-version="9"></span>(Tie)</p><p> </p><p><strong><u>Acknowledgment</u></strong></p><p>Prof: Bruce Maxwell</p><p>TA: Xiaoyue Zheng</p><p>Student: Jackie, Lucas, Rayne.</p><p>Online source:</p><p>VGA VHDL code: <a href="http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/1998_w/Altera_UP1_Board_Map/vga.html#anchor2504141" class="external-link" rel="nofollow">http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/1998_w/Altera_UP1_Board_Map/vga.html#anchor2504141</a></p><p>Tic-tac-toe: <a href="https://en.wikipedia.org/wiki/Tic-tac-toe" class="external-link" rel="nofollow">https://en.wikipedia.org/wiki/Tic-tac-toe</a></p><p>More reference: </p><p><a href="https://stackoverflow.com/questions/22695618/vhdl-code-for-tic-tac-toe-game" class="external-link" rel="nofollow">https://stackoverflow.com/questions/22695618/vhdl-code-for-tic-tac-toe-game</a></p><p><a href="https://stackoverflow.com/questions/36704062/tic-tac-toe-in-vhdl" class="external-link" rel="nofollow">https://stackoverflow.com/questions/36704062/tic-tac-toe-in-vhdl</a></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/461898117/462061815.png">400px-Tic_tac_toe.svg.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/461898117/462061819.jpg">IMG_2371.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/461898117/462061820.jpg">IMG_2166.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/461898117/462061825.mp4">1575943820194831.mp4</a> (video/mp4)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/461898117/462061826.mp4">1575943753751038.mp4</a> (video/mp4)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/461898117/462061828.jpg">2551575942953_.pic.jpg</a> (image/jpeg)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/461898117/462061830.jpg">2611575944288_.pic_hd.jpg</a> (image/jpeg)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

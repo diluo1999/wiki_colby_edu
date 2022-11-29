@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Di Luo : Di and Yixuan&#39;s CS333 Project 4: JavaScript</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Di Luo</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="413631037.html">Di Luo’s Home</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513807.html">Di Luo&#39;s CS333</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="474513801.html">Di Luo&#39;s Exploration in JavaScript</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Di Luo : Di and Yixuan&#39;s CS333 Project 4: JavaScript
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Di Luo</span>, last modified on Mar 11, 2020
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h4 id="DiandYixuan&#39;sCS333Project4:JavaScript-Task1:ControlFlowStatements">Task 1: Control Flow Statements</h4><p>1. for loop and If/else statement</p><p>Both C and JS contains 4 important elements in for loop: initializer, condition, statement, and step. Before each loop, the condition is checked. If the condition is true, the loop continues; if false, the for loop stops execution.</p><p><span style="color: rgb(0,0,0);">Regarding loop scope, in JS, variables declared with var are in function scope and variables declared with let are in loop scope. While in C, the variable initialized in the initialization condition has its own scope, which is different from the scope of the loop body.</span></p><p>C and JavaScript have the same functionality in if/else statement. The choice of the execution of the block of code is made by the condition after the if statement.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200638.png" data-image-src="attachments/477069584/477200638.png" data-unresolved-comment-count="0" data-linked-resource-id="477200638" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 8.59.09 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p> </p><p>2. while loop</p><p>Repeatedly check a boolean condition and execute a statement until the condition becomes false. Both C and Javascript use the keyword &quot;while&quot; to execute a while loop according to the condition next to the keyword.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200639.png" data-image-src="attachments/477069584/477200639.png" data-unresolved-comment-count="0" data-linked-resource-id="477200639" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 8.59.14 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p> </p><p>3. for-in loop</p><p>Looping over all the keys of an object. C doesn't contain this control flow statement.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200640.png" data-image-src="attachments/477069584/477200640.png" data-unresolved-comment-count="0" data-linked-resource-id="477200640" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 8.59.20 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p> </p><p>4. switch statement</p><p>If a matching value is found, the statements after the matching value are executed. If none of the values match and there is a default case, the default case is executed.</p><p><span style="color: rgb(0,0,0);">Both JS and C have a default case being optional in their switch statements. However, the s<span style="color: rgb(0,0,0);">witch statement creates a block scope in C but not in JS. In addition, </span>JS expects only case and default statements inside the switch statements, but in C, identifiers can be declared within the switch statement. </span></p><p><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200641.png" data-image-src="attachments/477069584/477200641.png" data-unresolved-comment-count="0" data-linked-resource-id="477200641" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 8.59.30 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></span></p><p> </p><h4 id="DiandYixuan&#39;sCS333Project4:JavaScript-Task2:FunctionType">Task 2: Function Type</h4><p>Function in JS is not a data type but is a subclass of object. The testing code below creates a function func and tests if func is an instance of Object, which returns true.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200647.png" data-image-src="attachments/477069584/477200647.png" data-unresolved-comment-count="0" data-linked-resource-id="477200647" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 9.37.46 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p> </p><p>Function in JS can be assigned to a variable.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/477069584/477200649.png" data-image-src="attachments/477069584/477200649.png" data-unresolved-comment-count="0" data-linked-resource-id="477200649" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 9.37.52 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p> </p><p>Functions can be passed into another function.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200650.png" data-image-src="attachments/477069584/477200650.png" data-unresolved-comment-count="0" data-linked-resource-id="477200650" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 9.37.58 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p> </p><p>Function statements require a name for the function. If no name is given, complier will give error: SyntaxError: Function statements require a function name.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200651.png" data-image-src="attachments/477069584/477200651.png" data-unresolved-comment-count="0" data-linked-resource-id="477200651" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 9.38.12 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p> </p><p>However, through <span style="color: rgb(0,0,0);">a function expression, which assigns a function to a variable, a function can be anonymous. </span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200653.png" data-image-src="attachments/477069584/477200653.png" data-unresolved-comment-count="0" data-linked-resource-id="477200653" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 9.38.17 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p> </p><h4 id="DiandYixuan&#39;sCS333Project4:JavaScript-Task3:GeneralSortAlgorithm">Task 3: General Sort Algorithm</h4><p>Insert sort is implemented, which consists of three kinds of functions. The first one is insertSort(), which takes in the array to be sorted and a comparator as inputs.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200659.png" data-image-src="attachments/477069584/477200659.png" data-unresolved-comment-count="0" data-linked-resource-id="477200659" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 10.00.20 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p>The second one is insert(), which takes in a index, the array and the comparator as inputs.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200660.png" data-image-src="attachments/477069584/477200660.png" data-unresolved-comment-count="0" data-linked-resource-id="477200660" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 10.00.26 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p>The third one is comparator function, for which I implemented two, one for ascending sequence and the other for descending sequence.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" draggable="false" width="500" src="attachments/477069584/477200661.png" data-image-src="attachments/477069584/477200661.png" data-unresolved-comment-count="0" data-linked-resource-id="477200661" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 10.00.32 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p>I tested with the code below.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/477069584/477200662.png" data-image-src="attachments/477069584/477200662.png" data-unresolved-comment-count="0" data-linked-resource-id="477200662" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 10.00.38 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p>The result proves the validity of the program.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" draggable="false" src="attachments/477069584/477200663.png" data-image-src="attachments/477069584/477200663.png" data-unresolved-comment-count="0" data-linked-resource-id="477200663" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2020-03-11 at 10.00.46 PM.png" data-base-url="https://wiki.colby.edu" data-linked-resource-content-type="image/png" data-linked-resource-container-id="477069584" data-linked-resource-container-version="3"></span></p><p> </p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200638.png">Screen Shot 2020-03-11 at 8.59.09 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200639.png">Screen Shot 2020-03-11 at 8.59.14 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200640.png">Screen Shot 2020-03-11 at 8.59.20 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200641.png">Screen Shot 2020-03-11 at 8.59.30 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200647.png">Screen Shot 2020-03-11 at 9.37.46 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200649.png">Screen Shot 2020-03-11 at 9.37.52 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200650.png">Screen Shot 2020-03-11 at 9.37.58 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200651.png">Screen Shot 2020-03-11 at 9.38.12 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200653.png">Screen Shot 2020-03-11 at 9.38.17 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200659.png">Screen Shot 2020-03-11 at 10.00.20 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200660.png">Screen Shot 2020-03-11 at 10.00.26 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200661.png">Screen Shot 2020-03-11 at 10.00.32 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200662.png">Screen Shot 2020-03-11 at 10.00.38 PM.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/477069584/477200663.png">Screen Shot 2020-03-11 at 10.00.46 PM.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 29, 2022 09:29</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
